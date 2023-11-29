@@ -1,23 +1,56 @@
 .Header {
 	width: 70vw;
-	padding: 30px 5px;
-	border-bottom: 1px solid rgba(var(--baseColor-code), 0.2);
+	padding: 10px 5px;
+	border-bottom: 2px solid rgba(var(--baseColor-code), 0.2);
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
 
-	h1 {
-		font-size: var(--titSize2);
-	}
-
-	ul {
+	.title {
+		width: 50%;
 		display: flex;
-		gap: 50px;
+		justify-content: flex-start;
 		align-items: center;
 
-		a.on {
-			color: var(--pointColor);
-			font-weight: bold;
+		h1 {
+			font-size: var(--titSize2);
+			padding-right: 50px;
+			padding-left: px;
+			border-right: 2px solid black;
+		}
+
+		h2 {
+			font-size: 0.9rem;
+			padding-left: 20px;
+			align-items: center;
+		}
+	}
+
+	.menuBox {
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-left: 2px solid rgba(var(--baseColor-code), 0.2);
+		font-size: 0.9rem;
+
+		.menu {
+			width: 91%;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		ul {
+			gap: 15px;
+			display: flex;
+			justify-content: flex-end;
+			padding-right: 5px;
+			align-items: center;
+
+			a.on {
+				color: var(--pointColor);
+				font-weight: bold;
+			}
 		}
 	}
 
@@ -43,7 +76,7 @@
 	}
 	.themeBox.dark {
 		.ball {
-			left: 36px;
+			left: 35px;
 		}
 	}
 }

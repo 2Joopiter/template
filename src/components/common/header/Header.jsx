@@ -4,45 +4,52 @@ import { NavLink, Link } from 'react-router-dom';
 export default function Header({ Dark, setDark }) {
 	return (
 		<header className='Header'>
-			<h1>
-				<Link to='/'>Home</Link>
-			</h1>
+			<div className='title'>
+				<h1>
+					<Link to='/'>Home</Link>
+				</h1>
+				<h2>Lorem ipsum dolor sit amet</h2>
+			</div>
 
-			<ul>
-				<li>
-					<NavLink to='/department' activeClassName={'on'}>
-						Department
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/youtube' activeClassName={'on'}>
-						Youtube
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/gallery' activeClassName={'on'}>
-						Gallery
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/community' activeClassName={'on'}>
-						Community
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/members' activeClassName={'on'}>
-						Member
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/contact' activeClassName={'on'}>
-						Contact
-					</NavLink>
-				</li>
-			</ul>
+			<div className='menuBox'>
+				<div className='menu'>
+					<ul>
+						<li>
+							<NavLink to='/department' activeClassName={'on'}>
+								Department
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/youtube' activeClassName={'on'}>
+								Youtube
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/gallery' activeClassName={'on'}>
+								Gallery
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/community' activeClassName={'on'}>
+								Community
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/members' activeClassName={'on'}>
+								Member
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/contact' activeClassName={'on'}>
+								Contact
+							</NavLink>
+						</li>
+					</ul>
+				</div>
 
-			<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
-				<div className='ball'></div>
+				<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+					<div className='ball'></div>
+				</div>
 			</div>
 		</header>
 	);
