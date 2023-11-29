@@ -1,0 +1,19 @@
+{
+  "information": [
+    {
+      "title": "BRANDING",
+      "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, culpa. Laborum rerum eligendi atque delectus rem provident architecto fugiat quas!",
+      "pic": "info1.png"
+    },
+    {
+      "title": "INTERACTIVE",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem commodi doloribus voluptas dolor blanditiis consequatur, voluptatem rem veritatis accusantium.",
+      "pic": "info2.png"
+    },
+    {
+      "title": "PRODUCTION",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis corrupti voluptatibus quod qui, laboriosam quas. Ut soluta quae fugit aperiam!",
+      "pic": "info3.png"
+    }
+  ]
+}
