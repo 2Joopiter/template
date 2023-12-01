@@ -14,13 +14,14 @@
 
 		h1 {
 			font-size: var(--titSize2);
+			font-family: var(--titleFont);
 			padding-right: 50px;
-			padding-left: px;
 			border-right: 2px solid black;
+			letter-spacing: 3px;
 		}
 
 		h2 {
-			font-size: 0.9rem;
+			font-size: 0.85rem;
 			padding-left: 20px;
 			align-items: center;
 		}

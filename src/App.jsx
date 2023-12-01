@@ -7,18 +7,21 @@ import Gallery from './components/sub/gallery/Gallery';
 import Members from './components/sub/members/Members';
 import Youtube from './components/sub/youtube/Youtube';
 import Footer from './components/common/footer/Footer';
+import Detail from './components/sub/youtube/Detail';
 
 import { Route } from 'react-router-dom';
 import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
 import { useState } from 'react';
+import { useMedia } from './hooks/useMedia';
 
 export default function App() {
 	const [Dark, setDark] = useState();
+	const [Toggle, setToggle] = useState(false);
 
 	return (
-		<div className={Dark ? 'wrap dark' : 'wrap'}>
-			<Header Dark={Dark} setDark={setDark} />
+		<div className={`wrap ${Dark ? 'dark' : ''} ${useMedia()}`}>
+			<Header Dark={Dark} setDark={setDark} Toggle={Toggle} setToggle={setToggle} />
 			<Route exact path='/' component={MainWrap} />
 			<Route path='/Community' component={Community} />
 			<Route path='/Contact' component={Contact} />
@@ -26,6 +29,7 @@ export default function App() {
 			<Route path='/Gallery' component={Gallery} />
 			<Route path='/Members' component={Members} />
 			<Route path='/Youtube' component={Youtube} />
+			<Route path='/Detail/:id' component={Detail} />
 			<Footer />
 		</div>
 	);

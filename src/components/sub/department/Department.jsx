@@ -39,6 +39,9 @@ export default function Department() {
 
 	return (
 		<Layout title={'Department'}>
+			<figure className='top'>
+				<img src={`${path.current}/img/departTop.jpg`} alt='building' />
+			</figure>
 			<section className='infoBox'>
 				<h2>{combinedTitle(InfoTit)}</h2>
 				<div className='info'>
@@ -55,13 +58,6 @@ export default function Department() {
 					})}
 				</div>
 			</section>
-
-			<div className='midimage'>
-				<div className='txt'>
-					<h2>Special</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, explicabo?</p>
-				</div>
-			</div>
 
 			<section className='memberBox'>
 				<h2>{combinedTitle(MemberTit)}</h2>

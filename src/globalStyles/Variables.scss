@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=DM+Sans:opsz@9..40&family=Bebas+Neue&family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=DM+Sans:opsz@9..40&family=Bebas+Neue&family=Mukta&family=Oswald:wght@200;400&family=Raleway&display=swap');
 
 :root {
-	--baseFont: 'DM Sans', 'Nanum Myeongjo', 'arial', '돋움';
+	--baseFont: 'DM Sans', 'Noto Sans KR', 'arial', '돋움';
 	--pointFont: 'Bebas Neue', 'arial';
-	--subFont: 'Mukta', 'arial';
+	--titleFont: 'oswald', 'arial';
+	--subFont: 'Raleway', 'arial';
 	--baseColor: #121212;
 	--baseColor-code: 18, 18, 18;
 	--pointColor: #2e4697;
 	--pointColor-code: 46, 70, 151;
-	--bgColor: #f3f3f3;
+	--bgColor: ghostwhite;
 	--titSize1: 2.4rem;
-	--titSize2: 1.6rem;
+	--titSize2: 1.5rem;
 	--bodySize: 1rem;
 }
 

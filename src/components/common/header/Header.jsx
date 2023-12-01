@@ -6,9 +6,11 @@ export default function Header({ Dark, setDark }) {
 		<header className='Header'>
 			<div className='title'>
 				<h1>
-					<Link to='/'>Home</Link>
+					<Link to='/'>HOME</Link>
 				</h1>
-				<h2>Lorem ipsum dolor sit amet</h2>
+				<h2>
+					Lorem ipsum <br /> dolor sit amet
+				</h2>
 			</div>
 
 			<div className='menuBox'>
