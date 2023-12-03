@@ -33,7 +33,7 @@ export default function Detail() {
 							title={YoutubeData.title}
 						></iframe>
 					</div>
-					<h3>{YoutubeData.title}</h3>
+					<h3>Descriptions</h3>
 					<p>{YoutubeData.description}</p>
 				</article>
 			)}

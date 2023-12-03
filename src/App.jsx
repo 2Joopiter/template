@@ -14,6 +14,7 @@ import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
 import { useState } from 'react';
 import { useMedia } from './hooks/useMedia';
+import Menu from './components/common/menu/Menu';
 
 export default function App() {
 	const [Dark, setDark] = useState();
@@ -31,6 +32,7 @@ export default function App() {
 			<Route path='/Youtube' component={Youtube} />
 			<Route path='/Detail/:id' component={Detail} />
 			<Footer />
+			{Toggle && <Menu setToggle={setToggle} />}
 		</div>
 	);
 }

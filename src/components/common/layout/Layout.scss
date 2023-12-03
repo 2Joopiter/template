@@ -9,7 +9,7 @@
 	h1 {
 		font-size: 0;
 		font-weight: normal;
-		opacity: 0.8;
+		opacity: 0.9;
 		margin-bottom: 15px;
 		font-family: var(--titleFont);
 		text-transform: uppercase;
@@ -41,5 +41,13 @@
 				transform: scale(1);
 			}
 		}
+	}
+}
+
+// tablet mode
+.tablet,
+.mobile {
+	.Layout {
+		width: 80vw;
 	}
 }

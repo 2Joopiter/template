@@ -1,0 +1,22 @@
+.Menu {
+	width: 240px;
+	height: 30vh;
+	background-color: var(--revColor);
+	border: 1px solid rgba(var(--baseColor-code), 0.7);
+	position: fixed;
+	top: 7%;
+	right: 11%;
+	z-index: 5;
+
+	h1 {
+		font-family: var(--titleFont);
+		font-size: 2rem;
+		padding: 5px 0 5px 10px;
+	}
+
+	ul {
+		padding: 10px;
+		line-height: 1.4em;
+		font-size: 1.2rem;
+	}
+}

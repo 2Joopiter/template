@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { useCustomText } from '../../../hooks/useText';
 import Layout from '../../common/layout/Layout';
 import './Department.scss';
-import { useCustomText } from '../../../hooks/useText';
 
 export default function Department() {
 	const [MemberData, setMemberData] = useState([]);
