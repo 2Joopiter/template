@@ -59,6 +59,14 @@ export default function Department() {
 				</div>
 			</section>
 
+			<section className='midPhoto'>
+				<div className='photo'>
+					<img src={`${path.current}/img/departMid.jpg`} alt='tv' />
+					<h4>Lorem ipsum dolor sit amet consectetur adipisicing.</h4>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+			</section>
+
 			<section className='memberBox'>
 				<h2>{combinedTitle(MemberTit)}</h2>
 				<div className='con'>
