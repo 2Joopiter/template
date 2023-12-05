@@ -86,7 +86,7 @@
 				left: 50%;
 				transform: translate(-50%, -25%);
 				text-align: center;
-				color: var(--revColor);
+				color: var(--bgColor);
 				font-family: var(--titleFont);
 			}
 
@@ -98,7 +98,7 @@
 				left: 50%;
 				transform: translate(-50%, -25%);
 				text-align: center;
-				color: var(--revColor);
+				color: var(--bgColor);
 			}
 		}
 	}
@@ -134,6 +134,12 @@
 					width: 80%;
 					height: 300px;
 					margin: auto;
+					transition-duration: 0.7s;
+
+					&:hover {
+						transform: scale(1.1);
+						transition-duration: 0.7s;
+					}
 
 					img {
 						width: 100%;

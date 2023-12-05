@@ -109,13 +109,13 @@
 		}
 	}
 	.menuBox {
+		justify-content: flex-end;
 		.menu {
-			width: 70%;
-
+			width: 67%;
 			ul {
 				flex-wrap: wrap;
 				font-size: 1rem;
-				justify-content: right;
+				justify-content: center;
 				line-height: 0.8em;
 			}
 		}
