@@ -22,9 +22,15 @@
 	span {
 		cursor: pointer;
 		position: absolute;
-		font-size: 0.8rem;
+		font-size: 3rem;
 		color: var(--bgColor);
-		top: 3vw;
-		right: 3vw;
+		top: 2vw;
+		right: 2.5vw;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+		text-align: center;
+		margin-top: 5px;
 	}
 }

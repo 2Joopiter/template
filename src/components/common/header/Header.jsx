@@ -1,5 +1,6 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
+import { SlMenu } from 'react-icons/sl';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	return (
@@ -55,7 +56,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 			</div>
 
 			<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
-				menu
+				<SlMenu />
 			</button>
 		</header>
 	);

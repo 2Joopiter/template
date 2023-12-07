@@ -1,5 +1,6 @@
 import './Modal.scss';
 import { AnimatePresence, motion } from 'framer-motion';
+import { IoClose } from 'react-icons/io5';
 
 export default function Modal({ Open, setOpen, children }) {
 	return (
@@ -7,10 +8,10 @@ export default function Modal({ Open, setOpen, children }) {
 			{Open && (
 				<motion.aside
 					className='Modal'
-					initial={{ opacity: 0, x: '-100%', scale: 0, rotate: -45 }}
-					animate={{ opacity: 1, x: '0%', scale: 1, rotate: 0 }}
-					exit={{ opacity: 0, y: '100%', scale: 2, rotate: 45, transition: { delay: 0.5 } }}
-					transition={{ duration: 1 }}
+					initial={{ opacity: 0, y: '-100%', scale: 0, rotate: -45 }}
+					animate={{ opacity: 1, y: '0%', scale: 1, rotate: 0 }}
+					exit={{ opacity: 0, y: '100%', transition: { delay: 0.5 } }}
+					transition={{ duration: 0.7 }}
 				>
 					<motion.div
 						className='con'
@@ -21,7 +22,9 @@ export default function Modal({ Open, setOpen, children }) {
 					>
 						{children}
 					</motion.div>
-					<span onClick={() => setOpen(false)}>close</span>
+					<span onClick={() => setOpen(false)}>
+						<IoClose />
+					</span>
 				</motion.aside>
 			)}
 		</AnimatePresence>

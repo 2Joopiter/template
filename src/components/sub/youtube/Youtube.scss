@@ -1,9 +1,50 @@
 .Youtube {
+	h1 {
+		letter-spacing: -0.6rem;
+		padding: 10px 0 0px 15px;
+		span {
+			font-size: 8rem;
+			color: rgba(var(--baseColor-code), 0.9);
+		}
+	}
 	article {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
+		&:nth-of-type(1),
+		&:nth-of-type(6) {
+			margin-bottom: 50px;
+			.pic {
+				width: 100%;
+				height: 20vmax;
+				margin-top: 10px;
+			}
+			.description {
+				background-color: rgba(var(--pointColor-code), 1);
+				color: var(--bgColor);
+				width: 100%;
+				padding-bottom: -10px;
+
+				h2 {
+					font-size: 3rem;
+					text-align: center;
+					margin-top: -5px;
+					margin-bottom: -5px;
+				}
+
+				.txt {
+					display: none;
+				}
+			}
+		}
+
+		&:nth-of-type(6) {
+			.pic {
+				margin-top: 50px;
+			}
+		}
 
 		&:nth-of-type(even) {
 			flex-direction: row;
@@ -17,8 +58,19 @@
 
 		&:last-child {
 			border-bottom: none;
+			margin-bottom: 200px;
 		}
 
+		.pic {
+			width: 50%;
+			height: 18vmax;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
 		.description {
 			width: 50%;
 			display: flex;
@@ -44,6 +96,7 @@
 					opacity: 0.5;
 					word-break: break-all;
 					text-align: justify;
+					margin-bottom: 10px;
 				}
 
 				.infoBox {
@@ -61,16 +114,6 @@
 				}
 			}
 		}
-		.pic {
-			width: 50%;
-			height: 18vmax;
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
 	}
 }
 
@@ -79,6 +122,29 @@
 .tablet,
 .mobile {
 	.Youtube {
+		article {
+			&:nth-of-type(1),
+			&:nth-of-type(6) {
+				margin-bottom: 50px;
+				.pic {
+					width: 100%;
+					height: 20vmax;
+					margin-top: 10px;
+				}
+				.description {
+					h2 {
+						font-size: 2.5rem;
+						text-align: center;
+						margin-top: 10px;
+						margin-bottom: 5px;
+					}
+				}
+			}
+			&:last-child {
+				border-bottom: none;
+				margin-bottom: 50px;
+			}
+		}
 		.description {
 			padding: 10px 15px;
 			h2 {
@@ -93,8 +159,28 @@
 .mobile {
 	.Youtube {
 		article {
-			border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
-			padding: 50px 0px;
+			border-bottom: 1px solid rgba(var(--pointColor-code), 0.5);
+			padding: 20px 0px;
+
+			&:nth-of-type(1),
+			&:nth-of-type(6) {
+				margin-bottom: 100px;
+				.pic {
+					width: 100%;
+					height: 25vmax;
+					margin-top: 10px;
+				}
+				.description {
+					margin-top: -20px;
+					margin-bottom: -10px;
+					h2 {
+						font-size: 2.5rem;
+						text-align: center;
+						margin-top: 10px;
+						margin-bottom: 5px;
+					}
+				}
+			}
 
 			&:nth-of-type(even) {
 				flex-direction: row;
@@ -106,13 +192,21 @@
 
 		.description {
 			width: 100%;
+
+			.txt {
+				margin-top: -10px;
+				.infoBox {
+					margin-bottom: 60px;
+				}
+			}
 		}
 		article {
-			padding: 20px 0px;
+			padding: 15px 0px;
 
 			.pic {
 				width: 100%;
 				height: 25vmax;
+				margin-top: -10px;
 				padding-bottom: 20px;
 				border-bottom: 1px solid (var(--baseColor-code), 0.8);
 			}

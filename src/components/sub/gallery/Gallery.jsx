@@ -1,17 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
+import { useCustomText } from '../../../hooks/useText';
 import Masonry from 'react-masonry-component';
 import Layout from '../../common/layout/Layout';
-import './Gallery.scss';
 import { LuSearch } from 'react-icons/lu';
 import Modal from '../../common/modal/Modal';
+import './Gallery.scss';
 
 export default function Gallery() {
 	const [Pics, setPics] = useState([]);
+	const [Open, setOpen] = useState(false);
+	const [Index, setIndex] = useState(0);
 	const myID = useRef('199646606@N06');
 	const refNav = useRef(null);
 	const isUser = useRef(myID.current);
-	const [Open, setOpen] = useState(false);
-	const [Index, setIndex] = useState(0);
+	const refFrameWrap = useRef(null);
+	const gap = useRef(5);
+	const searched = useRef(false);
+	const shortenText = useCustomText('shorten');
 
 	const activateBtn = (e) => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -45,10 +50,11 @@ export default function Gallery() {
 		if (!keyword.trim()) return;
 		e.target.children[0].value = '';
 		fetchFlickr({ type: 'search', keyword: keyword });
+		searched.current = true;
 	};
 
 	const fetchFlickr = async (opt) => {
-		const num = 30;
+		const num = 50;
 		const flickr_api = process.env.REACT_APP_FLICKR_API;
 		const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&method=`;
 		const method_interest = 'flickr.interestingness.getList';
@@ -71,6 +77,7 @@ export default function Gallery() {
 	};
 
 	useEffect(() => {
+		refFrameWrap.current.style.setProperty('--gap', gap.current + 'px');
 		fetchFlickr({ type: 'user', id: myID.current });
 	}, []);
 
@@ -79,9 +86,9 @@ export default function Gallery() {
 			<Layout title={'Gallery'}>
 				<article className='controls'>
 					<nav className='btnSet' ref={refNav}>
-						<button onClick={handleInterest}>Interest Gallery</button>
+						<button onClick={handleInterest}>INTEREST GALLERY</button>
 						<button className='on' onClick={handleMine}>
-							My Gallery
+							MY GALLERY
 						</button>
 					</nav>
 
@@ -93,9 +100,12 @@ export default function Gallery() {
 					</form>
 				</article>
 
-				<section>
-					<Masonry className={'frame'} options={{ transitionDuration: '0.5s', gutter: 5 }}>
-						{Pics.length === 0 ? (
+				<section className='frameWrap' ref={refFrameWrap}>
+					<Masonry
+						className={'frame'}
+						options={{ transitionDuration: '0.5s', gutter: gap.current }}
+					>
+						{searched.current && Pics.length === 0 ? (
 							<h2>해당 키워드에 해당하는 검색 결과가 없습니다.</h2>
 						) : (
 							Pics.map((pic, idx) => {
@@ -114,12 +124,7 @@ export default function Gallery() {
 											/>
 										</div>
 
-										<section
-											className='infoBox'
-											onMouseover={(e) => {
-												e.target.style.backgroundColor = 'rgba(var(--baseColor-code), 0.5';
-											}}
-										>
+										<section className='infoBox'>
 											<div className='profile'>
 												<img
 													src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
@@ -133,7 +138,7 @@ export default function Gallery() {
 												/>
 											</div>
 											<div className='text'>
-												<h2>{pic.title}</h2>
+												<h2>{shortenText(pic.title, 30)}</h2>
 												<span onClick={handleUser}>{pic.owner}</span>
 											</div>
 										</section>
@@ -148,10 +153,13 @@ export default function Gallery() {
 			{
 				<Modal Open={Open} setOpen={setOpen}>
 					{Pics.length !== 0 && (
-						<img
-							src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`}
-							alt={Pics[Index].title}
-						/>
+						<>
+							<img
+								src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`}
+								alt={Pics[Index].title}
+							/>
+							<h2>{Pics[Index].title}</h2>
+						</>
 					)}
 				</Modal>
 			}
