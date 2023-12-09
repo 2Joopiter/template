@@ -38,7 +38,6 @@ export default function Youtube() {
 					return (
 						<article key={data.id}>
 							<div className='videoBox'>
-								<h2>{shortenText(data.snippet.title, 50)}</h2>
 								<div className='thumbnail'>
 									{' '}
 									<Link to={`/detail/${data.id}`}>
@@ -46,7 +45,8 @@ export default function Youtube() {
 									</Link>
 								</div>
 								<div className='txt'>
-									<p>{shortenText(data.snippet.description, 150)}</p>
+									<h2>{shortenText(data.snippet.title, 50)}</h2>
+									<p>{shortenText(data.snippet.description, 300)}</p>
 									<div className='infoBox'>
 										<span>{customText(date, '.')}</span>
 										<em>{time.split('Z')[0]}</em>
