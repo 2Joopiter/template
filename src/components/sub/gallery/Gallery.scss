@@ -18,21 +18,21 @@
 
 		.btnSet {
 			display: flex;
-			gap: 10px;
+			gap: 12px;
 
 			button {
 				background: transparent;
 				border: none;
 				cursor: pointer;
-				padding: 2px 9px 7px 9px;
-				font-size: 1.3rem;
+				padding: 2px 8px 4px 8px;
+				font-size: 1.35rem;
 				color: rgba(var(--baseColor-code), 0.4);
 				position: relative;
 				transition: 0.4s;
 				border: 1px solid rgba(var(--pointColor-code), 0.5);
 				font-family: var(--boldFont);
-				font-weight: 200;
-				letter-spacing: -0.02rem;
+				font-weight: 500;
+				letter-spacing: 0.03rem;
 
 				&::after {
 					content: '';
@@ -109,7 +109,7 @@
 				padding: 15px 0 10px 15px;
 				display: flex;
 				position: relative;
-				margin-top: -87px;
+				margin-top: -85px;
 				color: var(--bgColor);
 
 				&:hover {
@@ -121,12 +121,13 @@
 
 					img {
 						width: 50px;
+						border-radius: 50px;
 					}
 				}
 
 				.text {
 					width: 70%;
-					margin: auto;
+					margin: auto -2px;
 
 					h2 {
 						font-weight: bold;
@@ -153,6 +154,12 @@
 .laptop {
 	.Gallery {
 		--num: 3;
+
+		h1 {
+			span {
+				font-size: 7.5rem;
+			}
+		}
 	}
 }
 
@@ -160,6 +167,12 @@
 .tablet {
 	.Gallery {
 		--num: 2;
+
+		h1 {
+			span {
+				font-size: 6.7rem;
+			}
+		}
 	}
 }
 
@@ -167,5 +180,23 @@
 .mobile {
 	.Gallery {
 		--num: 1;
+		h1 {
+			span {
+				font-size: 5.3rem;
+			}
+		}
+		.controls {
+			.btnSet {
+				gap: 10px;
+				margin-bottom: 5px;
+
+				button {
+					font-size: 1.2rem;
+				}
+			}
+		}
+		form {
+			margin-bottom: 10px;
+		}
 	}
 }

@@ -7,10 +7,10 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 		<header className='Header'>
 			<div className='title'>
 				<h1>
-					<Link to='/'>HOME</Link>
+					<Link to='/'>JOURNEY</Link>
 				</h1>
 				<h2>
-					Lorem ipsum <br /> dolor sit amet
+					ENJOY <br /> UR Journey
 				</h2>
 			</div>
 

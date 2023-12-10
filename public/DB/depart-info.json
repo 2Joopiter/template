@@ -1,7 +1,7 @@
 {
   "about": [
     {
-      "title": "BRANDING",
+      "title": "PLANNING",
       "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, culpa. Laborum rerum eligendi atque delectus rem provident architecto fugiat quas!",
       "pic": "info1.png"
     },
@@ -11,7 +11,7 @@
       "pic": "info2.png"
     },
     {
-      "title": "PRODUCTION",
+      "title": "MEMORY",
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis corrupti voluptatibus quod qui, laboriosam quas. Ut soluta quae fugit aperiam!",
       "pic": "info3.png"
     }

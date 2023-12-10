@@ -10,7 +10,7 @@ export default function Footer() {
 	return (
 		<footer className='Footer'>
 			<div className='footerMenu'>
-				<h1>Home</h1>
+				<h1>JOURNEY</h1>
 				<ul>
 					Menu
 					<li>

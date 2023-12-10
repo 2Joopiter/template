@@ -12,7 +12,7 @@
 		top: 0%;
 
 		span {
-			font-size: 6.23rem;
+			font-size: 7rem;
 		}
 	}
 
@@ -212,12 +212,22 @@
 }
 
 //laptop mode
+.laptop {
+	.Department {
+		h1 {
+			span {
+				font-size: 6rem;
+			}
+		}
+	}
+}
+
 .tablet,
 .mobile {
 	.Department {
 		h1 {
 			span {
-				font-size: 4.5rem;
+				font-size: 4.6rem;
 			}
 		}
 
@@ -276,7 +286,7 @@
 	.Department {
 		h1 {
 			span {
-				font-size: 3.7rem;
+				font-size: 3.8rem;
 			}
 		}
 		.top {
