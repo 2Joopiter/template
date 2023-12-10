@@ -67,8 +67,8 @@
 	}
 
 	.info {
-		width: 100%;
-		margin-bottom: 80px;
+		width: 96%;
+		margin: 0 auto 80px auto;
 		display: flex;
 		justify-content: space-between;
 
@@ -96,6 +96,7 @@
 				margin-bottom: 20px;
 				padding-bottom: 15px;
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
+				font-size: 1.5rem;
 			}
 
 			p {
@@ -249,6 +250,13 @@
 					margin-left: 40px;
 				}
 			}
+			.info {
+				article {
+					h4 {
+						font-size: 1.2rem;
+					}
+				}
+			}
 		}
 		.midPhoto {
 			margin-bottom: 50px;
@@ -307,6 +315,10 @@
 
 				&:last-child {
 					margin-bottom: -50px;
+				}
+
+				h4 {
+					font-size: 1.2rem;
 				}
 			}
 		}
