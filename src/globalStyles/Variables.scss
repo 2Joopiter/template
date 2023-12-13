@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=DM+Sans:opsz@9..40&family=Bebas+Neue&family=Mukta&family=Antonio&family=REM&family=Raleway&family=Antonio:wght@200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=DM+Sans:opsz@9..40&family=Raleway&family=Antonio:wght@200;400;500&family=Archivo+Narrow&family=Odibee+Sans&family=Krona+One&family=Orbitron&display=swap');
 
 :root {
-	--baseFont: 'DM Sans', 'Noto Sans KR', 'arial', '돋움';
-	--pointFont: 'Bebas Neue', 'arial';
-	--titleFont: 'REM', 'arial';
+	--baseFont: 'DM Sans', 'IBM Plex Sans KR', 'arial', '돋움';
+	--pointFont: 'Odibee Sans', 'arial';
+	--titleFont: 'Krona One', 'arial';
 	--subFont: 'Raleway', 'arial';
 	--boldFont: 'Antonio', 'arial';
+	--specialFont: 'Archivo Narrow', 'arial';
+	--buttonFont: 'orbitron', 'arial';
 	--baseColor: #121212;
 	--baseColor-code: 18, 18, 18;
 	--boxColor: #d2d7e1;

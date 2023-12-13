@@ -130,7 +130,7 @@
 			transform: translate(-50%, -25%);
 			text-align: center;
 			color: var(--bgColor);
-			font-family: var(--titleFont);
+			font-family: var(--boldFont);
 		}
 
 		p {
@@ -142,9 +142,11 @@
 			transform: translate(-50%, -25%);
 			text-align: center;
 			color: var(--bgColor);
+			font-family: var(--boldFont);
 		}
 	}
 }
+
 .memberBox {
 	width: 100%;
 	margin-bottom: 120px;
@@ -178,16 +180,17 @@
 			margin-bottom: 50px;
 
 			h3 {
-				font-family: var(--pointFont);
+				font-family: var(--boldFont);
 				font-weight: bold;
 				font-size: 2rem;
 				opacity: 0.7;
 			}
 
 			p {
-				margin-top: -5px;
+				margin-top: 5px;
+				font-family: 700;
 				margin-bottom: 15px;
-				font-family: var(--subFont);
+				font-family: var(--baseFont);
 			}
 
 			.pic {

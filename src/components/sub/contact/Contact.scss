@@ -1,0 +1,108 @@
+.Contact {
+	h1 {
+		padding: 10px 0 0px 15px;
+		letter-spacing: -0.6rem;
+		span {
+			font-size: 8rem;
+		}
+	}
+	h2 {
+		width: 40%;
+		margin: 50px auto 0 50px;
+		padding-bottom: 7px;
+		border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
+	}
+
+	.msgBox {
+		width: 40%;
+		padding: 2px 0 20px 0;
+		margin: 10px auto 100px 50px;
+		border: 1px solid rgba(var(--baseColor-code), 0.5);
+
+		#mailSection {
+			margin: 35px auto 20px 40px;
+			font-family: var(--specialFont);
+			width: 85%;
+
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+
+				textarea {
+					height: 5vw;
+				}
+
+				.sendBtn {
+					padding-top: 5px;
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	#mapSection {
+		.controlBox {
+			.branch {
+				margin: 40px auto 0 50px;
+				button {
+					background-color: transparent;
+					background-color: var(--pointColor);
+					color: var(--bgColor);
+					padding: 3px 7px;
+					border: 1px solid rgba(var(--baseColor-code), 0.3);
+					font-family: var(--baseFont);
+				}
+			}
+			.info {
+				margin: 0 auto 20px 50px;
+				button {
+					background-color: transparent;
+					background-color: var(--pointColor);
+					color: var(--bgColor);
+					padding: 3px 7px;
+					border: 1px solid rgba(var(--baseColor-code), 0.3);
+					font-family: var(--baseFont);
+				}
+			}
+		}
+	}
+	.tab {
+		width: 90%;
+		height: 50vh;
+		background-color: var(--baseColor);
+		position: relative;
+		filter: saturate(0);
+		transition: filter 0.5s;
+		margin-bottom: 200px;
+		margin: 20px auto 200px 50px;
+
+		&:hover {
+			filter: saturate(1);
+		}
+
+		.mapBox,
+		.viewBox {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			z-index: 1;
+
+			&.on {
+				opacity: 1;
+				z-index: 2;
+			}
+		}
+	}
+}
+
+.dark {
+	.Contact {
+		.tab {
+			filter: saturate(0) invert(1) contrast(0.8); //saturate(0.3) brightness(0.5) contrast(1.6) hue-rotate(180deg);
+		}
+	}
+}

@@ -27,6 +27,7 @@
 			font-size: 0.85rem;
 			padding-left: 20px;
 			align-items: center;
+			font-family: var(--subFont);
 		}
 	}
 
@@ -34,9 +35,11 @@
 		width: 50%;
 		display: flex;
 		justify-content: space-between;
+		font-family: var(--boldFont);
 		align-items: center;
 		border-left: 2px solid rgba(var(--baseColor-code), 0.5);
-		font-size: 1rem;
+		font-size: 1.1rem;
+		letter-spacing: -0.015rem;
 
 		.menu {
 			width: 91%;
