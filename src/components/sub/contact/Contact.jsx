@@ -156,10 +156,11 @@ export default function Contact() {
 			<div id='mapSection'>
 				<div className='controlBox'>
 					<nav className='branch'>
-						{mapInfo.current.map((el, idx) =>
-							//prettier-ignore
-							<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>{el.title}</button>
-						)}
+						{mapInfo.current.map((el, idx) => (
+							<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
+								{el.title}
+							</button>
+						))}
 					</nav>
 
 					<nav className='info'>
