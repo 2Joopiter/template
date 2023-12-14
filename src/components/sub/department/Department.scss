@@ -54,6 +54,9 @@
 			align-items: center;
 			margin-bottom: 40px;
 			text-transform: uppercase;
+			font-family: var(--pointFont);
+			font-size: 4.5rem;
+
 			&::before,
 			&::after {
 				content: '';
@@ -80,7 +83,7 @@
 			border: 2px solid rgba(var(--baseColor-code), 0.8);
 
 			.infoPic {
-				width: 30%;
+				width: 20%;
 				opacity: 0.5;
 				margin: auto;
 				margin-bottom: 15px;
@@ -157,6 +160,8 @@
 		flex-basis: 100%;
 		align-items: center;
 		text-transform: uppercase;
+		font-family: var(--pointFont);
+		font-size: 4.5rem;
 
 		&::before,
 		&::after {

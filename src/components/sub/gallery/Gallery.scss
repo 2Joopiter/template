@@ -21,18 +21,18 @@
 			gap: 12px;
 
 			button {
-				background: transparent;
+				background: #f3f6ff;
 				border: none;
 				cursor: pointer;
-				padding: 2px 8px 4px 8px;
-				font-size: 1.1rem;
-				color: rgba(var(--baseColor-code), 0.4);
+				padding: 4px 11px 7px 11px;
+				font-size: 1.05rem;
+				color: rgba(var(--baseColor-code), 0.3);
 				position: relative;
 				transition: 0.4s;
-				border-bottom: 1px solid rgba(var(--pointColor-code), 0.5);
-				font-family: var(--buttonFont);
+				border: 1px solid rgba(var(--baseColor-code), 0.6);
+				font-family: var(--boldFont);
 				font-weight: 600;
-				letter-spacing: 0.03rem;
+				letter-spacing: 0.01rem;
 
 				&::after {
 					content: '';
@@ -46,7 +46,7 @@
 					transition: 0.5s;
 				}
 				&.on {
-					color: rgba(var(--baseColor), 0.8);
+					color: rgba(var(--baseColor-code), 0.85);
 
 					&::after {
 						width: 100%;

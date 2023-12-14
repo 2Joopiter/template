@@ -11,7 +11,7 @@ export default function Community() {
 		const data = localStorage.getItem('post');
 		return JSON.parse(data);
 	};
-	const [Post, setPost] = useState(getLocalData());
+	const [Post, setPost] = useState(getLocalData() || []);
 	const refTit = useRef(null);
 	const refCon = useRef(null);
 	const refEditTit = useRef(null);
@@ -95,17 +95,19 @@ export default function Community() {
 		<Layout title={'Community'}>
 			<div className='communityWrap'>
 				<div className='inputBox'>
-					<input type='text' placeholder='title' ref={refTit} />
-					<textarea cols='30' rows='3' placeholder='content' ref={refCon}></textarea>
-
-					<nav>
-						<button onClick={createPost}>
-							<IoMdCreate />
-						</button>
-						<button onClick={resetPost}>
-							<MdClose />
-						</button>
-					</nav>
+					<div className='writeBox'>
+						<input type='text' placeholder='title' ref={refTit} />
+						<textarea cols='30' rows='3' placeholder='content' ref={refCon}></textarea>
+						<nav>
+							<button onClick={createPost}>
+								<IoMdCreate />
+							</button>
+							<button onClick={resetPost}>
+								<MdClose />
+							</button>
+						</nav>
+					</div>
+					<div className='designBox'></div>
 				</div>
 
 				<div className='showBox'>
@@ -141,7 +143,7 @@ export default function Community() {
 									<div className='txt'>
 										<h2>{el.title}</h2>
 										<p>{el.content}</p>
-										<span>{strDate}</span>
+										<span>Date: {strDate}</span>
 									</div>
 									<nav>
 										<button onClick={() => enableUpdate(idx)}>Edit</button>

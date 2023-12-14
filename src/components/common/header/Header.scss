@@ -1,6 +1,6 @@
 .Header {
 	width: 75vw;
-	padding: 13px 10px;
+
 	border: 2px solid rgba(var(--baseColor-code), 0.8);
 	border-bottom: none;
 	display: flex;
@@ -16,9 +16,10 @@
 		h1 {
 			font-size: var(--titSize2);
 			font-family: var(--titleFont);
-			color: var(--pointColor);
+			background-color: var(--pointColor);
+			color: var(--bgColor);
 			font-weight: 600;
-			padding: 0 40px 0 10px;
+			padding: 10px 25px 11px 25px;
 			border-right: 2px solid black;
 			letter-spacing: -0.1rem;
 		}
@@ -27,7 +28,6 @@
 			font-size: 0.85rem;
 			padding-left: 20px;
 			align-items: center;
-			font-family: var(--subFont);
 		}
 	}
 
@@ -38,7 +38,7 @@
 		font-family: var(--boldFont);
 		align-items: center;
 		border-left: 2px solid rgba(var(--baseColor-code), 0.5);
-		font-size: 1.1rem;
+		font-size: 1.05rem;
 		letter-spacing: -0.015rem;
 
 		.menu {

@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=DM+Sans:opsz@9..40&family=Raleway&family=Antonio:wght@200;400;500&family=Archivo+Narrow&family=Odibee+Sans&family=Krona+One&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=DM+Sans:opsz@9..40&family=Antonio:wght@200;400;500&family=Krona+One&family=Grandiflora+One&family=Playfair+Display:wght@400;600;800&display=swap');
 
 :root {
 	--baseFont: 'DM Sans', 'IBM Plex Sans KR', 'arial', '돋움';
-	--pointFont: 'Odibee Sans', 'arial';
+	--subFont: 'Kalnia', 'arial';
 	--titleFont: 'Krona One', 'arial';
-	--subFont: 'Raleway', 'arial';
 	--boldFont: 'Antonio', 'arial';
-	--specialFont: 'Archivo Narrow', 'arial';
-	--buttonFont: 'orbitron', 'arial';
+	--pointFont: 'Playfair Display', 'arial';
 	--baseColor: #121212;
 	--baseColor-code: 18, 18, 18;
 	--boxColor: #d2d7e1;
 	--boxColor-code: 210, 215, 225;
 	--pointColor: #356d9a;
 	--pointColor-code: 53, 109, 154;
-	--bgColor: #f8f8fe;
-	--bgColor-code: 248, 248, 255;
+	--bgColor: #fafbfe;
+	--bgColor-code: 250, 251, 254;
 	--titSize1: 2.4rem;
 	--titSize2: 1.5rem;
 	--bodySize: 1rem;
