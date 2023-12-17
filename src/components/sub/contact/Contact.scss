@@ -1,42 +1,78 @@
 .Contact {
 	h1 {
-		padding: 10px 0 0px 15px;
-		letter-spacing: -0.6rem;
+		position: absolute;
+		padding: 160px 25px 0 30px;
+
 		span {
-			font-size: 8rem;
+			color: rgba(var(--lightColor-code), 0.9);
+		}
+	}
+
+	.topBox {
+		width: 100%;
+		height: 550px;
+		margin: 5px 0 10px 0;
+		padding-bottom: 5px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 	h2 {
-		width: 40%;
-		margin: 50px auto 0 50px;
-		padding-bottom: 7px;
-		border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
+		display: flex;
+		justify-content: center;
+		margin: 50px auto 50px;
+		font-family: var(--boldFont);
+		font-size: var(--titSize2);
+		color: rgba(var(--baseColor-code), 0.9);
 	}
 
-	.msgBox {
-		width: 40%;
-		padding: 2px 0 20px 0;
-		margin: 10px auto 100px 50px;
-		border: 1px solid rgba(var(--baseColor-code), 0.5);
+	.msg {
+		width: 90%;
+		display: flex;
+		justify-content: space-between;
+		margin: 10px auto;
+		border: 1px solid rgba(var(--baseColor-code), 0.3);
 
-		#mailSection {
-			margin: 35px auto 20px 40px;
-			font-family: var(--specialFont);
-			width: 85%;
+		.msgBox {
+			width: 55%;
+			margin: 5px auto;
 
-			form {
-				display: flex;
-				flex-direction: column;
-				gap: 5px;
+			#mailSection {
+				width: 85%;
+				margin: 45px 0px 10px 50px;
+				font-family: var(--titleFont);
 
-				textarea {
-					height: 5vw;
+				form {
+					display: flex;
+					flex-direction: column;
+					gap: 5px;
+
+					textarea {
+						height: 12vw;
+					}
+
+					.sendBtn {
+						padding-top: 5px;
+						text-align: right;
+					}
 				}
+			}
+		}
 
-				.sendBtn {
-					padding-top: 5px;
-					text-align: right;
-				}
+		.designBox {
+			width: 45%;
+			margin: 5px auto;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 26vw;
+				object-fit: cover;
+				filter: invert(69%) sepia(50%) saturate(245%) hue-rotate(189deg) brightness(93%)
+					contrast(91%);
 			}
 		}
 	}

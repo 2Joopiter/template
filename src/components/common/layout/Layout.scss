@@ -1,26 +1,20 @@
 .Layout {
-	width: 75vw;
+	width: 85vw;
 	margin: 0px auto;
-	padding: 0 5px;
 	min-height: 60vh;
 	opacity: 0;
 	//transform: translateY(200px);
 	transition: opacity 1s, transform 1s;
-	border: 2px solid rgba(var(--baseColor-code), 0.8);
 
 	h1 {
-		font-size: 0;
-		font-weight: normal;
-		margin-bottom: 5px;
-		padding-left: 20px;
-		font-family: var(--subFont);
-		font-weight: 500;
+		font-weight: bold;
 		text-transform: uppercase;
-		letter-spacing: -0.4rem;
+		letter-spacing: -0.5rem;
+		height: 550px;
+		font-size: var(--titSize1);
 
 		span {
-			font-size: 5rem;
-			color: rgba(var(--baseColor-code), 0.8);
+			color: rgba(var(--baseColor-code), 0.85);
 			transform: scale(3);
 			opacity: 0;
 			transition-property: opacity, transform;

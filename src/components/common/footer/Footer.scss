@@ -1,6 +1,6 @@
 footer {
-	width: 75vw;
-	margin: 0 auto;
+	width: 85vw;
+	margin: 70px auto 0 auto;
 	padding: 0 0 30px 0;
 
 	.footerMenu {
@@ -8,16 +8,17 @@ footer {
 		display: flex;
 		padding-bottom: 50px;
 		margin-bottom: 20px;
-		border: 2px solid rgba(var(--baseColor-code), 0.8);
 		border-top: none;
+		background-color: var(--pointColor);
 
 		h1 {
 			width: 50%;
 			font-weight: bolder;
-			padding: 20px 0 0 30px;
-			color: var(--pointColor);
+			margin-right: 30px;
+			padding: 20px 50px 0 30px;
 			opacity: 0.9;
 			font-family: var(--titleFont);
+			color: var(--lightColor);
 		}
 
 		ul {
@@ -27,6 +28,7 @@ footer {
 			opacity: 0.8;
 			padding: 20px 0 0 0;
 			font-family: var(--boldFont);
+			color: var(--boxColor);
 
 			li {
 				font-weight: 600;
@@ -34,6 +36,7 @@ footer {
 				font-size: 1rem;
 				opacity: 0.8;
 				font-family: var(--buttonFont);
+				color: var(--lightColor);
 			}
 		}
 	}

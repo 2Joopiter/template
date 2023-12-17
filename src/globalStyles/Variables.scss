@@ -1,21 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=DM+Sans:opsz@9..40&family=Antonio:wght@200;400;500&family=Krona+One&family=Grandiflora+One&family=Playfair+Display:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Lato:ital,wght@0,300;0,400;1,400&family=Antonio:wght@200;400;500&family=Teko:wght@300;400;500&family=Fjalla+One&display=swap');
 
 :root {
-	--baseFont: 'DM Sans', 'IBM Plex Sans KR', 'arial', '돋움';
-	--subFont: 'Kalnia', 'arial';
-	--titleFont: 'Krona One', 'arial';
+	--baseFont: 'Lato', 'IBM Plex Sans KR', 'arial', '돋움';
 	--boldFont: 'Antonio', 'arial';
-	--pointFont: 'Playfair Display', 'arial';
+	--sansFont: 'Teko', 'arial';
+	--pointFont: 'Fjalla One', 'arial';
 	--baseColor: #121212;
 	--baseColor-code: 18, 18, 18;
-	--boxColor: #d2d7e1;
-	--boxColor-code: 210, 215, 225;
-	--pointColor: #356d9a;
-	--pointColor-code: 53, 109, 154;
-	--bgColor: #fafbfe;
-	--bgColor-code: 250, 251, 254;
-	--titSize1: 2.4rem;
-	--titSize2: 1.5rem;
+	--boxColor: #d5dce9;
+	--boxColor-code: 213, 220, 233;
+	--lightColor: #fbfbfb;
+	--lightColor-code: 251, 251, 251;
+	--pointColor: #233e8b;
+	--pointColor-code: 35, 62, 139;
+	--pointColor2: #8ac4d0;
+	--pointColor2-code: 138, 196, 208;
+	--bgColor: #f9f9f6;
+	--bgColor-code: 249, 249, 246;
+	--hdSize: 1.7rem;
+	--titSize1: 8rem;
+	--titSize2: 5rem;
 	--bodySize: 1rem;
 }
 

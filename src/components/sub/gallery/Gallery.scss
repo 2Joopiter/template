@@ -3,25 +3,37 @@
 	--num: 4;
 
 	h1 {
-		padding: 10px 0 0px 15px;
-		letter-spacing: -0.6rem;
-		span {
-			font-size: 8rem;
+		width: 60%;
+		position: absolute;
+		padding: 390px 25px 0 30px;
+	}
+
+	.topBox {
+		width: 100%;
+		height: 550px;
+		margin: 5px 0 10px 0;
+		padding-bottom: 5px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
+
 	.controls {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		padding: 30px 0 12px 20px;
+		padding: 15px 0 15px 20px;
 
 		.btnSet {
 			display: flex;
-			gap: 12px;
+			gap: 5px;
 
 			button {
-				background: #f3f6ff;
+				background: rgba(var(--lightColor-code), 0.9);
 				border: none;
 				cursor: pointer;
 				padding: 4px 11px 7px 11px;
@@ -29,7 +41,7 @@
 				color: rgba(var(--baseColor-code), 0.3);
 				position: relative;
 				transition: 0.4s;
-				border: 1px solid rgba(var(--baseColor-code), 0.6);
+				border: 1px solid rgba(var(--baseColor-code), 0.5);
 				font-family: var(--boldFont);
 				font-weight: 600;
 				letter-spacing: 0.01rem;

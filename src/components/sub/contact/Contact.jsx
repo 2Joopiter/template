@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 
 export default function Contact() {
 	const form = useRef();
+	const path = useRef(process.env.PUBLIC_URL);
 	const resetForm = () => {
 		const elArr = form.current.children;
 
@@ -134,24 +135,32 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
+			<figure className='topBox'>
+				<img src={`${path.current}/img/contactTop.jpg`} alt='map' />
+			</figure>
 			<h2>Message</h2>
-			<article className='msgBox'>
-				<div id='mailSection'>
-					<form ref={form} onSubmit={sendEmail}>
-						<label>Name</label>
-						<input type='text' name='user_name' />
-						<label>Email</label>
-						<input type='email' name='user_email' />
-						<label>Message</label>
-						<textarea name='message' />
-						<div className='sendBtn'>
-							<input type='submit' value='Send' />
-						</div>
-					</form>
+			<article className='msg'>
+				<div className='msgBox'>
+					<div id='mailSection'>
+						<form ref={form} onSubmit={sendEmail}>
+							<label>Name</label>
+							<input type='text' name='user_name' />
+							<label>Email</label>
+							<input type='email' name='user_email' />
+							<label>Message</label>
+							<textarea name='message' />
+							<div className='sendBtn'>
+								<input type='submit' value='Send' />
+							</div>
+						</form>
+					</div>
+				</div>
+				<div className='designBox'>
+					<img src={`${path.current}/img/contact.jpg`} alt='building' />
 				</div>
 			</article>
 
-			<h2>MAP</h2>
+			<h2>Location</h2>
 
 			<div id='mapSection'>
 				<div className='controlBox'>

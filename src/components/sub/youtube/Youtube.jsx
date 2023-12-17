@@ -1,6 +1,6 @@
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ export default function Youtube() {
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
 	const [Vids, setVids] = useState([]);
+	const path = useRef(process.env.PUBLIC_URL);
 
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
@@ -30,8 +31,23 @@ export default function Youtube() {
 
 	return (
 		<Layout title={'Youtube'}>
-			<figure className='head'></figure>
+			<h4>Lorem ipsum dolor sit amet consectetur.</h4>
+			<div class='topVid'>
+				<video src={`${path.current}/vid/youtube.mp4`} alt='yacht' muted autoPlay loop />
+			</div>
+			<div className='mainVid'>
+				<iframe
+					width='560'
+					height='315'
+					src='https://www.youtube.com/embed/b7LSsKsJGHY?si=J42JSmXDkdNY1kEd&amp;controls=0'
+					title='YouTube video player'
+					frameborder='0'
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+					allowfullscreen
+				></iframe>
+			</div>
 			<div className='content'>
+				<h3>Video</h3>
 				{Vids.map((data) => {
 					const [date, time] = data.snippet.publishedAt.split('T');
 

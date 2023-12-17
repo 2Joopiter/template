@@ -1,8 +1,6 @@
 .Header {
-	width: 75vw;
-
-	border: 2px solid rgba(var(--baseColor-code), 0.8);
-	border-bottom: none;
+	width: 85vw;
+	border: 1px solid rgba(var(--baseColor-code), 0.5);
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
@@ -14,18 +12,18 @@
 		align-items: center;
 
 		h1 {
-			font-size: var(--titSize2);
-			font-family: var(--titleFont);
+			font-size: var(--hdSize);
+			font-family: var(--boldFont);
 			background-color: var(--pointColor);
-			color: var(--bgColor);
+			color: var(--lightColor);
 			font-weight: 600;
-			padding: 10px 25px 11px 25px;
-			border-right: 2px solid black;
-			letter-spacing: -0.1rem;
+			padding: 7px 25px 12px 25px;
+			margin-right: 10px;
+			letter-spacing: 0.05rem;
 		}
 
 		h2 {
-			font-size: 0.85rem;
+			font-size: 0.9rem;
 			padding-left: 20px;
 			align-items: center;
 		}
@@ -35,11 +33,13 @@
 		width: 50%;
 		display: flex;
 		justify-content: space-between;
-		font-family: var(--boldFont);
+		font-family: var(--sansFont);
 		align-items: center;
-		border-left: 2px solid rgba(var(--baseColor-code), 0.5);
-		font-size: 1.05rem;
-		letter-spacing: -0.015rem;
+		//border-left: 2px solid rgba(var(--baseColor-code), 0.2);
+		margin-top: 3px;
+		font-size: 1.5rem;
+		letter-spacing: -0.01rem;
+		font-weight: 200;
 
 		.menu {
 			width: 91%;

@@ -17,6 +17,7 @@ export default function Gallery() {
 	const gap = useRef(5);
 	const searched = useRef(false);
 	const shortenText = useCustomText('shorten');
+	const path = useRef(process.env.PUBLIC_URL);
 
 	const activateBtn = (e) => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -84,6 +85,9 @@ export default function Gallery() {
 	return (
 		<>
 			<Layout title={'Gallery'}>
+				<figure className='topBox'>
+					<img src={`${path.current}/img/gallery.jpg`} alt='polaroid' />
+				</figure>
 				<article className='controls'>
 					<nav className='btnSet' ref={refNav}>
 						<button onClick={handleInterest}>INTEREST GALLERY</button>

@@ -7,6 +7,7 @@ import { useCustomText } from '../../../hooks/useText';
 
 export default function Community() {
 	const changeText = useCustomText('combined');
+	const path = useRef(process.env.PUBLIC_URL);
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		return JSON.parse(data);
@@ -93,6 +94,13 @@ export default function Community() {
 
 	return (
 		<Layout title={'Community'}>
+			<figure className='topBox'>
+				<img src={`${path.current}/img/community.jpg`} alt='hiking' />
+			</figure>
+			<div className='subTit'>
+				<h3>Recruit</h3>
+				<p>Meet travel mates from all over the world</p>
+			</div>
 			<div className='communityWrap'>
 				<div className='inputBox'>
 					<div className='writeBox'>
@@ -107,7 +115,6 @@ export default function Community() {
 							</button>
 						</nav>
 					</div>
-					<div className='designBox'></div>
 				</div>
 
 				<div className='showBox'>
@@ -127,7 +134,7 @@ export default function Community() {
 											defaultValue={el.content}
 											ref={refEditCon}
 										></textarea>
-										<span>{strDate}</span>
+										<span>Date: {strDate}</span>
 									</div>
 									<nav>
 										{/* 수정모드 일때 해당 버튼 클릭시 다시 출력모드 변경 */}
