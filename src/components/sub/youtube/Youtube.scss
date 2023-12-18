@@ -6,7 +6,7 @@
 		font-weight: bold;
 		font-family: var(--titleFont);
 		background-color: transparent;
-		padding: 10px 25px 0 30px;
+		margin: 10px 0 0 30px;
 		top: 0%;
 
 		span {
@@ -17,7 +17,7 @@
 		position: absolute;
 		width: 40%;
 		z-index: 4;
-		padding: 150px 0 0 30px;
+		margin: 150px 0 0 30px;
 		border-radius: 0 0 3px 0;
 		font-size: 3rem;
 		color: var(--bgColor);
@@ -26,22 +26,6 @@
 		display: none;
 	}
 
-	.titBox {
-		z-index: 5;
-		p {
-			position: absolute;
-			width: 50%;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-size: 5rem;
-			font-family: var(--pointFont);
-			color: var(--bgColor);
-			margin: 10px;
-			word-break: keep-all;
-			line-height: -2rem;
-		}
-	}
 	.topVid {
 		width: 100%;
 		overflow: hidden;
@@ -260,40 +244,56 @@
 .mobile {
 	.Youtube {
 		h1 {
+			margin: -10px 0px 0px 30px;
 			span {
-				font-size: 7.5rem;
+				font-size: var(--laptopTit);
 			}
 		}
-		article {
-			width: 45%;
-			margin: 10px auto;
-			&:nth-of-type(1) {
-				.videoBox {
-					.txt {
-						h2 {
-							font-size: 2.4rem;
-						}
-						p {
-							font-size: 0.9rem;
-						}
-					}
-				}
+		h4 {
+			font-size: 2.5rem;
+			margin: 115px 0 0 30px;
+		}
+
+		.topVid {
+			video {
+				height: 500px;
+			}
+			&::after {
+				font-size: 3rem;
+			}
+		}
+		.content {
+			h3 {
+				margin-top: 30px;
+				font-size: 3rem;
 			}
 
-			&:nth-of-type(2),
-			&:nth-of-type(3) {
-				.videoBox {
-					.txt {
-						h2 {
-							padding-top: 5px;
-							font-size: 1.5rem;
+			article {
+				width: 30%;
+				margin: 10px auto;
+
+				&:nth-of-type(1),
+				&:nth-of-type(2) {
+					width: 45.5%;
+
+					.videoBox {
+						.thumbnail {
+							img {
+								height: 21.5vw;
+							}
 						}
-						.infoBox {
-							span,
-							em {
-								font-size: 0.95rem;
-								margin-top: 5px;
-								margin-bottom: -5px;
+						.txt {
+							h2 {
+								padding-top: 5px;
+								font-size: 1.5rem;
+							}
+							.infoBox {
+								span,
+								em {
+									font-size: 0.95rem;
+									margin-top: 5px;
+									margin-bottom: -5px;
+								}
 							}
 						}
 					}
@@ -325,63 +325,59 @@
 .mobile {
 	.Youtube {
 		h1 {
+			margin: 15px 0px 0px 30px;
+			letter-spacing: -0.2rem;
 			span {
-				font-size: 6.7rem;
+				font-size: var(--tabletTit);
 			}
 		}
+		h4 {
+			font-size: 2rem;
+			margin: 110px 0 0 30px;
+		}
+		.topVid {
+			video {
+				height: 400px;
+			}
+			&::after {
+				font-size: 2.7rem;
+			}
+		}
+
 		.content {
-			&::before {
-				font-size: 3rem;
-				margin: -25px 0 5px 20px;
+			h3 {
+				margin-top: 75px;
+				margin-bottom: 35px;
+				font-size: 2.7rem;
 			}
-		}
 
-		article {
-			width: 85%;
-			margin: 10px auto;
+			article {
+				width: 45.5%;
+				margin: 10px auto;
 
-			&:nth-of-type(1) {
-				width: 100%;
-				.videoBox {
-					border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
-					.txt {
-						h2 {
-							font-size: 1.6rem;
-						}
-						p {
-							font-size: 0.75rem;
-						}
-						.infoBox {
-							span,
-							em {
-								font-size: 0.95rem;
+				&:nth-of-type(1),
+				&:nth-of-type(2) {
+					width: 100%;
+					margin-bottom: 20px;
+					.videoBox {
+						.thumbnail {
+							img {
+								height: 32vw;
 							}
 						}
-					}
-				}
-			}
-
-			&:nth-of-type(2),
-			&:nth-of-type(3) {
-				width: 48%;
-				margin-bottom: 50px;
-				.videoBox {
-					.thumbnail {
-						img {
-							height: 20vw;
-						}
-					}
-					.txt {
-						h2 {
-							padding-top: 5px;
-							font-size: 1.4rem;
-						}
-						.infoBox {
-							span,
-							em {
-								font-size: 0.95rem;
-								margin-top: 5px;
-								margin-bottom: -5px;
+						.txt {
+							h2 {
+								padding-top: 5px;
+								margin-bottom: -10px;
+								font-size: 1.4rem;
+							}
+							.infoBox {
+								span,
+								em {
+									font-size: 0.95rem;
+									margin-top: 5px;
+									margin-bottom: -30px;
+								}
 							}
 						}
 					}
@@ -390,21 +386,20 @@
 			.videoBox {
 				.thumbnail {
 					img {
-						height: 17.8vw;
+						height: 20vw;
 					}
 				}
 				.txt {
 					h2 {
 						font-size: 1.4rem;
-						padding-bottom: 20px;
+						margin-bottom: -10px;
 					}
 
 					.infoBox {
 						span,
 						em {
 							font-size: 0.85rem;
-							margin-top: 5px;
-							margin-bottom: -10px;
+							margin-bottom: 20px;
 						}
 					}
 				}
@@ -418,82 +413,72 @@
 	.Youtube {
 		h1 {
 			span {
-				font-size: 5rem;
+				font-size: var(--mobileTit);
 			}
 		}
+		h4 {
+			font-size: 1.6rem;
+			margin: 90px 0 0 30px;
+		}
+
+		.topVid {
+			video {
+				height: 350px;
+			}
+			&::after {
+				font-size: 2.2rem;
+			}
+		}
+
 		.content {
-			&::before {
-				font-size: 2.5rem;
+			h3 {
+				margin-top: 85px;
+				margin-bottom: 25px;
+				font-size: 2.2rem;
 			}
-		}
 
-		article {
-			width: 49%;
+			article {
+				width: 90%;
 
-			&:nth-of-type(1) {
-				width: 100%;
-				margin-bottom: 30px;
-				.videoBox {
-					.thumbnail {
-						img {
-							height: 42vw;
+				&:nth-of-type(1),
+				&:nth-of-type(2) {
+					width: 100%;
+					margin-bottom: -10px;
+					.videoBox {
+						.thumbnail {
+							img {
+								height: 43vw;
+							}
 						}
-					}
-					.txt {
-						h2 {
-							font-size: 1.5rem;
-						}
-						p {
-							font-size: 0.75rem;
-						}
-						.infoBox {
-							span,
-							em {
-								font-size: 0.83rem;
+						.txt {
+							h2 {
+								padding-top: 10px;
+								font-size: 1.4rem;
+							}
+							.infoBox {
+								span,
+								em {
+									font-size: 0.8rem;
+									margin-top: 5px;
+									margin-bottom: -10px;
+								}
 							}
 						}
 					}
 				}
-			}
 
-			&:nth-of-type(2),
-			&:nth-of-type(3) {
-				width: 85%;
-				margin-bottom: -10px;
-				.videoBox {
-					.thumbnail {
-						img {
-							height: 29vw;
-						}
-					}
-					.txt {
-						h2 {
-							padding-top: 10px;
-							font-size: 1.4rem;
-						}
-						.infoBox {
-							span,
-							em {
-								font-size: 0.8rem;
-								margin-top: 5px;
-								margin-bottom: -10px;
-							}
-						}
-					}
+				&:nth-of-type(2) {
+					margin-bottom: 40px;
+					padding-bottom: 30px;
+					border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
 				}
-			}
-
-			&:nth-of-type(3) {
-				margin-bottom: 40px;
-				padding-bottom: 30px;
-				border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
 			}
 
 			.videoBox {
 				display: unset;
 				.thumbnail {
 					img {
-						height: 21vw;
+						height: 35vw;
 					}
 				}
 				.txt {

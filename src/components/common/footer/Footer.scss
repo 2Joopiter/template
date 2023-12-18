@@ -63,6 +63,9 @@ footer {
 
 .tablet,
 .mobile {
+	h1 {
+		font-size: var(--hdSize);
+	}
 	footer {
 		width: 80vw;
 	}

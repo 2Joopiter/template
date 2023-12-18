@@ -5,7 +5,7 @@
 	h1 {
 		width: 60%;
 		position: absolute;
-		padding: 390px 25px 0 30px;
+		margin: 390px 0px 0px 30px;
 	}
 
 	.topBox {
@@ -168,22 +168,28 @@
 		--num: 3;
 
 		h1 {
+			margin: 400px 0px 0px 30px;
 			span {
-				font-size: 7.5rem;
+				font-size: var(--laptopTit);
 			}
 		}
 	}
 }
 
 //tablet
-.tablet {
+.tablet,
+.mobile {
 	.Gallery {
 		--num: 2;
 
 		h1 {
+			margin: 340px 0px 0px 30px;
 			span {
-				font-size: 6.7rem;
+				font-size: var(--tabletTit);
 			}
+		}
+		.topBox {
+			height: 450px;
 		}
 	}
 }
@@ -193,9 +199,13 @@
 	.Gallery {
 		--num: 1;
 		h1 {
+			margin: 315px 0px 0px 20px;
 			span {
-				font-size: 5.3rem;
+				font-size: var(--mobileTit);
 			}
+		}
+		.topBox {
+			height: 400px;
 		}
 		.controls {
 			.btnSet {
@@ -203,7 +213,7 @@
 				margin-bottom: 5px;
 
 				button {
-					font-size: 1.2rem;
+					font-size: 1rem;
 				}
 			}
 		}

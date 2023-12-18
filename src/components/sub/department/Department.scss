@@ -3,7 +3,7 @@
 		width: 60%;
 		position: absolute;
 		font-family: var(--titleFont);
-		padding: 160px 25px 0 30px;
+		margin: 170px 0 0 30px;
 
 		span {
 			color: rgba(var(--lightColor-code), 0.9);
@@ -214,7 +214,7 @@
 	.Department {
 		h1 {
 			span {
-				font-size: 6rem;
+				font-size: 5.5rem;
 			}
 		}
 	}
@@ -224,42 +224,39 @@
 .mobile {
 	.Department {
 		h1 {
+			margin: 120px 0 0 30px;
+			letter-spacing: -0.2rem;
 			span {
-				font-size: 4.6rem;
+				font-size: 3.15rem;
 			}
 		}
 
 		.top {
 			width: 100%;
-			height: 370px;
+			height: 350px;
+			margin-bottom: 50px;
 			padding-bottom: 20px;
 		}
 		.infoBox {
 			h2 {
-				font-size: 3rem;
-				&::before,
-				&::after {
-					content: '';
-					flex-grow: 1;
-					background-color: rgba(var(--pointColor-code), 0.8);
-					height: 2px;
-					margin-right: 40px;
-					margin-left: 40px;
-				}
+				font-size: 2.8rem;
 			}
 			.info {
 				article {
+					.infoPic {
+						width: 45%;
+					}
 					h4 {
-						font-size: 1.2rem;
+						font-size: 1.1rem;
 					}
 				}
 			}
 		}
 		.midPhoto {
-			margin-bottom: 50px;
+			margin-bottom: 80px;
 			.photo {
 				h4 {
-					top: 82%;
+					top: 81%;
 					font-size: 1.2rem;
 				}
 				p {
@@ -269,18 +266,9 @@
 			}
 		}
 		.memberBox {
-			margin-bottom: 100px;
+			margin-bottom: 150px;
 			h2 {
-				font-size: 3rem;
-				&::before,
-				&::after {
-					content: '';
-					flex-grow: 1;
-					background-color: rgba(var(--pointColor-code), 0.8);
-					height: 2px;
-					margin-right: 40px;
-					margin-left: 40px;
-				}
+				font-size: 2.8rem;
 			}
 		}
 	}
@@ -290,12 +278,14 @@
 .mobile {
 	.Department {
 		h1 {
+			margin: 110px 0px 0 30px;
 			span {
-				font-size: 3.8rem;
+				font-size: 2.2rem;
+				letter-spacing: -0.1rem;
 			}
 		}
 		.top {
-			height: 270px;
+			height: 300px;
 		}
 
 		.infoBox {
@@ -305,17 +295,20 @@
 			}
 			.info {
 				flex-wrap: wrap;
-			}
-			article {
-				width: 100%;
-				margin: 5px 0;
+				article {
+					width: 100%;
+					margin: 5px 0;
+					.infoPic {
+						width: 30%;
+					}
 
-				&:last-child {
-					margin-bottom: -50px;
-				}
+					&:last-child {
+						margin-bottom: -50px;
+					}
 
-				h4 {
-					font-size: 1.2rem;
+					h4 {
+						font-size: 1.03rem;
+					}
 				}
 			}
 		}
@@ -325,11 +318,11 @@
 
 			.photo {
 				h4 {
-					top: 82%;
+					top: 77%;
 					font-size: 1.1rem;
 				}
 				p {
-					top: 90%;
+					top: 89%;
 					font-size: 0.8rem;
 				}
 			}
@@ -343,6 +336,14 @@
 				article {
 					width: 50%;
 					margin-bottom: 50px;
+
+					h3 {
+						font-size: 1.6rem;
+					}
+
+					p {
+						font-size: 0.9rem;
+					}
 
 					.pic {
 						width: 30vw;
