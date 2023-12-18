@@ -1,20 +1,21 @@
 import { useCustomText } from '../../../hooks/useText';
 import './Info.scss';
 import postData from './dummyPosts.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Info() {
 	const changeText = useCustomText('combined');
 
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
-		if (data) {
-			return JSON.parse(data);
-		} else {
-			return postData.dummyPosts;
-		}
+		if (data) return JSON.parse(data);
+		else return postData.dummyPosts;
 	};
 	const [Post] = useState(getLocalData());
+
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(Post));
+	}, [Post]);
 
 	return (
 		<section className='Info'>

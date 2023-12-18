@@ -1,33 +1,15 @@
 import Layout from '../../common/layout/Layout';
-import './Youtube.scss';
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useCustomText } from '../../../hooks/useText';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './Youtube.scss';
 
 export default function Youtube() {
+	const YoutubeData = useSelector((store) => store.youtubeReducer.youtube);
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
-	const [Vids, setVids] = useState([]);
 	const path = useRef(process.env.PUBLIC_URL);
-
-	const fetchYoutube = async () => {
-		const api_key = process.env.REACT_APP_YOUTUBE_API;
-		const pid = process.env.REACT_APP_YOUTUBE_LIST;
-		const num = 9;
-		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
-
-		try {
-			const data = await fetch(baseURL);
-			const json = await data.json();
-			setVids(json.items);
-		} catch (err) {
-			console.error(err);
-		}
-	};
-
-	useEffect(() => {
-		fetchYoutube();
-	}, []);
 
 	return (
 		<Layout title={'Youtube'}>
@@ -48,7 +30,7 @@ export default function Youtube() {
 			</div>
 			<div className='content'>
 				<h3>Video</h3>
-				{Vids.map((data) => {
+				{YoutubeData?.map((data) => {
 					const [date, time] = data.snippet.publishedAt.split('T');
 
 					return (
