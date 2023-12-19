@@ -4,9 +4,10 @@ import { SlMenu } from 'react-icons/sl';
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../../../redux/action';
 
-export default function Header({ Dark, setDark }) {
+export default function Header() {
 	const dispatch = useDispatch();
 	const Toggle = useSelector((store) => store.menuReducer.menu);
+	const Dark = useSelector((store) => store.darkReducer.dark);
 	return (
 		<header className='Header'>
 			<div className='title'>
@@ -54,12 +55,18 @@ export default function Header({ Dark, setDark }) {
 					</ul>
 				</div>
 
-				<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+				<div
+					className={`themeBox ${Dark && 'dark'}`}
+					onClick={() => dispatch({ type: types.DARK.start, payload: !Dark })}
+				>
 					<div className='ball'></div>
 				</div>
 			</div>
 
-			<button className='menuToggle' onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}>
+			<button
+				className='menuToggle'
+				onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}
+			>
 				<SlMenu />
 			</button>
 		</header>
