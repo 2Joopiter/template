@@ -11,14 +11,17 @@
 		border-top: none;
 		background-color: var(--pointColor);
 
-		h1 {
+		.titBox {
 			width: 50%;
-			font-weight: bolder;
-			margin-right: 30px;
-			padding: 20px 50px 0 30px;
-			opacity: 0.9;
-			font-family: var(--titleFont);
-			color: var(--lightColor);
+			h1 {
+				width: 100%;
+				font-weight: bolder;
+				margin-right: 30px;
+				padding: 20px 50px 0 30px;
+				opacity: 0.9;
+				font-family: var(--titleFont);
+				color: var(--lightColor);
+			}
 		}
 
 		.content {
@@ -71,11 +74,13 @@
 							color: #d9d9d9;
 						}
 						form {
-							margin: 10px auto;
+							margin: 5px auto;
 
-							input::placeholder {
-								font-style: italic;
-								padding-left: 2px;
+							span {
+								input::placeholder {
+									font-style: italic;
+									padding-left: 2px;
+								}
 							}
 						}
 					}
@@ -98,12 +103,117 @@
 	}
 }
 
+.laptop,
 .tablet,
 .mobile {
-	h1 {
-		font-size: var(--hdSize);
+	.Footer {
+		.footerBox {
+			.content {
+				.social {
+					form {
+						span {
+							display: block;
+							margin-right: 30px;
+							input {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-	footer {
-		width: 80vw;
+}
+.tablet,
+.mobile {
+	.Footer {
+		.footerBox {
+			.titBox {
+				width: 30%;
+				h1 {
+					font-size: 1.6rem;
+				}
+			}
+			.content {
+				width: 70%;
+
+				ul {
+					font-size: 1.1rem;
+				}
+				.social {
+					form {
+						span {
+							display: block;
+							margin-right: 30px;
+							input {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.mobile {
+	.Footer {
+		.footerBox {
+			display: flex;
+			flex-direction: column;
+
+			.titBox {
+				width: 100%;
+				h1 {
+					font-size: 1.6rem;
+				}
+			}
+			.content {
+				width: 90%;
+				margin: 10px 30px;
+
+				ul {
+					font-size: 1.2rem;
+
+					.menuBox {
+						display: flex;
+						flex-wrap: wrap;
+						li {
+							font-size: 1.1rem;
+						}
+
+						.menuLeft {
+							width: 50%;
+						}
+						.menuRight {
+							width: 50%;
+						}
+					}
+
+					.social {
+						width: 100%;
+						margin-top: 20px;
+						border-top: 1px solid var(--boxColor);
+						padding-top: 20px;
+
+						ul {
+							font-size: 1.4rem;
+						}
+
+						form {
+							span {
+								display: block;
+								margin-right: 20px;
+								margin-top: -5px;
+								margin-bottom: -30px;
+								input {
+									width: 40%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

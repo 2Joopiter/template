@@ -10,7 +10,9 @@ export default function Footer() {
 	return (
 		<footer className='Footer'>
 			<div className='footerBox'>
-				<h1>JOURNEY</h1>
+				<div className='titBox'>
+					<h1>JOURNEY</h1>
+				</div>
 				<div className='content'>
 					<ul>
 						Menu
@@ -62,7 +64,9 @@ export default function Footer() {
 									</li>
 								</ul>
 								<form>
-									<input type='text' placeholder='Search' />
+									<span>
+										<input type='text' placeholder='Search' />
+									</span>
 								</form>
 							</div>
 						</article>
