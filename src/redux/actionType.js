@@ -1,13 +1,13 @@
-export const MEMBER = {
-	start: 'MEMBER_START',
-	success: 'MEMBER_SUCCESS',
-	fail: 'MEMBER_FAIL',
+export const MEMBERS = {
+	start: 'MEMBERS_START',
+	success: 'MEMBERS_SUCCESS',
+	fail: 'MEMBERS_FAIL',
 };
 
-export const INFO = {
-	start: 'INFO_START',
-	success: 'INFO_SUCCESS',
-	fail: 'INFO_FAIL',
+export const DEPARTINFO = {
+	start: 'DEPARTINFO_START',
+	success: 'DEPARTINFO_SUCCESS',
+	fail: 'DEPARTINFO_FAIL',
 };
 
 export const HISTORY = {
@@ -20,6 +20,12 @@ export const YOUTUBE = {
 	start: 'YOUTUBE_START',
 	success: 'YOUTUBE_SUCCESS',
 	fail: 'YOUTUBE_FAIL',
+};
+
+export const FLICKR = {
+	start: 'FLICKR_START',
+	success: 'FLICKR_SUCCESS',
+	fail: 'FLICKR_FAIL',
 };
 
 export const MODAL = {

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { LuSearch } from 'react-icons/lu';
 import { useDispatch } from 'react-redux';
-import * as types from '../../../redux/action';
+import * as types from '../../../redux/actionType';
 import Masonry from 'react-masonry-component';
 import Layout from '../../common/layout/Layout';
 import Modal from '../../common/modal/Modal';

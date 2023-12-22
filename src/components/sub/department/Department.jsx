@@ -5,11 +5,12 @@ import Layout from '../../common/layout/Layout';
 import './Department.scss';
 
 export default function Department() {
-	const MemberData = useSelector((store) => store.memberReducer.members);
-	const InfoData = useSelector((store) => store.infoReducer.about);
-	//const HistoryData = useSelector((store) => store.historyReducer.history);
+	const members = useSelector((store) => store.membersReducer);
+	const info = useSelector((store) => store.departInfoReducer);
 	const path = useRef(process.env.PUBLIC_URL);
 	const combinedTitle = useCustomText('combined');
+	const MemberData = Object.values(members)[0];
+	const InfoData = Object.values(info)[0];
 
 	return (
 		<Layout title={'Department'}>
@@ -19,7 +20,7 @@ export default function Department() {
 			<section className='infoBox'>
 				<h2>{combinedTitle('About')}</h2>
 				<div className='info'>
-					{InfoData?.map((Info, idx) => {
+					{InfoData.map((Info, idx) => {
 						return (
 							<article key={Info + idx}>
 								<div className='infoPic'>
@@ -44,7 +45,7 @@ export default function Department() {
 			<section className='memberBox'>
 				<h2>{combinedTitle('Members')}</h2>
 				<div className='con'>
-					{MemberData?.map((member, idx) => {
+					{MemberData.map((member, idx) => {
 						return (
 							<article key={member + idx}>
 								<h3>{member.name}</h3>

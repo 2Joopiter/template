@@ -1,8 +1,8 @@
 import './Modal.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import * as types from '../../../redux/action';
 import { AnimatePresence, motion } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
+import * as types from '../../../redux/actionType';
 
 export default function Modal({ children }) {
 	const dispatch = useDispatch();

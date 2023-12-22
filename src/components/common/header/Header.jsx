@@ -2,7 +2,7 @@ import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 import { SlMenu } from 'react-icons/sl';
 import { useDispatch, useSelector } from 'react-redux';
-import * as types from '../../../redux/action';
+import * as types from '../../../redux/actionType';
 
 export default function Header() {
 	const dispatch = useDispatch();
@@ -55,18 +55,12 @@ export default function Header() {
 					</ul>
 				</div>
 
-				<div
-					className={`themeBox ${Dark && 'dark'}`}
-					onClick={() => dispatch({ type: types.DARK.start, payload: !Dark })}
-				>
+				<div className={`themeBox ${Dark && 'dark'}`} onClick={() => dispatch({ type: types.DARK.start, payload: !Dark })}>
 					<div className='ball'></div>
 				</div>
 			</div>
 
-			<button
-				className='menuToggle'
-				onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}
-			>
+			<button className='menuToggle' onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}>
 				<SlMenu />
 			</button>
 		</header>

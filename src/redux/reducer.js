@@ -1,82 +1,64 @@
 import { combineReducers } from 'redux';
-import * as types from './action';
+import * as types from './actionType';
 
-const memberReducer = (state = { members: [] }, action) => {
-	switch (action.type) {
-		case types.MEMBER.success:
-			return { ...state, members: action.payload };
-		case types.MEMBER.fail:
-			return { ...state, members: action.payload };
-		default:
-			return state;
-	}
-};
-
-const infoReducer = (state = { about: [] }, action) => {
-	switch (action.type) {
-		case types.INFO.success:
-			return { ...state, about: action.payload };
-		case types.INFO.fail:
-			return { ...state, about: action.payload };
-		default:
-			return state;
-	}
+const membersReducer = (state = { members: [] }, action) => {
+	if (action.type === types.MEMBERS.start) return state;
+	else if (action.type === types.MEMBERS.success) return { ...state, members: action.payload };
+	else if (action.type === types.MEMBERS.fail) return { ...state, members: action.payload };
+	else return state;
 };
 
 const historyReducer = (state = { history: [] }, action) => {
-	switch (action.type) {
-		case types.HISTORY.success:
-			return { ...state, history: action.payload };
-		default:
-			return state;
-	}
+	if (action.type === types.HISTORY.start) return state;
+	else if (action.type === types.HISTORY.success) return { ...state, history: action.payload };
+	else if (action.type === types.HISTORY.fail) return { ...state, history: action.payload };
+	else return state;
+};
+
+const departInfoReducer = (state = { about: [] }, action) => {
+	if (action.type === types.DEPARTINFO.start) return state;
+	else if (action.type === types.DEPARTINFO.success) return { ...state, about: action.payload };
+	else if (action.type === types.DEPARTINFO.fail) return { ...state, about: action.payload };
+	else return state;
 };
 
 const youtubeReducer = (state = { youtube: [] }, action) => {
-	switch (action.type) {
-		case types.YOUTUBE.success:
-			return { ...state, youtube: action.payload };
-		case types.YOUTUBE.fail:
-			return { ...state, youtube: action.payload };
-		default:
-			return state;
-	}
+	if (action.type === types.YOUTUBE.start) return state;
+	else if (action.type === types.YOUTUBE.success) return { ...state, youtube: action.payload };
+	else if (action.type === types.YOUTUBE.fail) return { ...state, youtube: action.payload };
+	else return state;
+};
+
+const flickrReducer = (state = { flickr: [] }, action) => {
+	if (action.type === types.FLICKR.start) return state;
+	else if (action.type === types.FLICKR.success) return { ...state, flickr: action.payload };
+	else if (action.type === types.FLICKR.fail) return { ...state, flickr: action.payload };
+	else return state;
 };
 
 const modalReducer = (state = { modal: false }, action) => {
-	switch (action.type) {
-		case types.MODAL.start:
-			return { ...state, modal: action.payload };
-		default:
-			return state;
-	}
+	if (action.type === types.MODAL.start) return { ...state, modal: action.payload };
+	else return state;
 };
 
 const menuReducer = (state = { menu: false }, action) => {
-	switch (action.type) {
-		case types.MENU.start:
-			return { ...state, menu: action.payload };
-		default:
-			return state;
-	}
+	if (action.type === types.MENU.start) return { ...state, menu: action.payload };
+	else return state;
 };
 
 const darkReducer = (state = { dark: false }, action) => {
-	switch (action.type) {
-		case types.DARK.start:
-			return { ...state, dark: action.payload };
-		default:
-			return state;
-	}
+	if (action.type === types.DARK.start) return { ...state, dark: action.payload };
+	else return state;
 };
 
 const reducers = combineReducers({
-	memberReducer,
+	membersReducer,
 	historyReducer,
+	departInfoReducer,
 	youtubeReducer,
+	flickrReducer,
 	modalReducer,
 	menuReducer,
-	infoReducer,
 	darkReducer,
 });
 export default reducers;

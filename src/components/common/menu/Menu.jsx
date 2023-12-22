@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import * as types from '../../../redux/action';
+import * as types from '../../../redux/actionType';
 import './Menu.scss';
 
 export default function Menu() {
