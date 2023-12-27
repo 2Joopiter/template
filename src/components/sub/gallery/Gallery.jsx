@@ -128,6 +128,7 @@ export default function Gallery() {
 					{isSuccess && Pics.length !== 0 && (
 						<img src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`} alt={Pics[Index].title} />
 					)}
+					<h2>{Pics[Index].title}</h2>
 				</Modal>
 			}
 		</>
