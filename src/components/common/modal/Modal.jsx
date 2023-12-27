@@ -1,11 +1,13 @@
 import './Modal.scss';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 import { IoClose } from 'react-icons/io5';
 
-export default function Modal({ Open, setOpen, children }) {
+export default function Modal({ children }) {
+	const { ModalOpen, setModalOpen } = useGlobalData();
 	return (
 		<AnimatePresence>
-			{Open && (
+			{ModalOpen && (
 				<motion.aside
 					className='Modal'
 					initial={{ opacity: 0, y: '-100%', scale: 0, rotate: -45 }}
@@ -22,7 +24,7 @@ export default function Modal({ Open, setOpen, children }) {
 					>
 						{children}
 					</motion.div>
-					<span onClick={() => setOpen(false)}>
+					<span onClick={() => setModalOpen(false)}>
 						<IoClose />
 					</span>
 				</motion.aside>

@@ -1,3 +1,4 @@
+import './Footer.scss';
 import { NavLink, Link } from 'react-router-dom';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { FaSquareXTwitter } from 'react-icons/fa6';
