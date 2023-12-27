@@ -1,7 +1,7 @@
 .Contact {
 	h1 {
 		position: absolute;
-		padding: 160px 25px 0 30px;
+		margin: 180px 0 0 30px;
 
 		span {
 			color: rgba(var(--lightColor-code), 0.9);
@@ -34,7 +34,7 @@
 		display: flex;
 		justify-content: space-between;
 		margin: 10px auto;
-		border: 1px solid rgba(var(--baseColor-code), 0.3);
+		//border: 1px solid rgba(var(--baseColor-code), 0.3);
 
 		.msgBox {
 			width: 55%;
@@ -42,7 +42,7 @@
 
 			#mailSection {
 				width: 85%;
-				margin: 45px 0px 10px 50px;
+				margin: 25px 0px 5px 30px;
 				font-family: var(--titleFont);
 
 				form {
@@ -138,6 +138,90 @@
 	.Contact {
 		.tab {
 			filter: saturate(0) invert(1) contrast(0.8); //saturate(0.3) brightness(0.5) contrast(1.6) hue-rotate(180deg);
+		}
+	}
+}
+
+.laptop,
+.tablet,
+.mobile {
+	.Contact {
+		h1 {
+			margin: 175px 0 0 30px;
+			span {
+				font-size: var(--laptopTit);
+			}
+		}
+		.topBox {
+			height: 500px;
+		}
+	}
+}
+
+.tablet,
+.mobile {
+	.Contact {
+		h1 {
+			margin: 160px 0 0 30px;
+			span {
+				font-size: var(--laptopTit);
+			}
+		}
+		.topBox {
+			height: 450px;
+		}
+		h2 {
+			font-size: 3.7rem;
+		}
+
+		.msg {
+			.msgBox {
+				width: 90%;
+
+				#mailSection {
+					margin: 20px auto;
+				}
+			}
+			.designBox {
+				display: none;
+			}
+		}
+		.tab {
+			height: 40vh;
+		}
+	}
+}
+
+.mobile {
+	.Contact {
+		h1 {
+			margin: 115px 0 0 30px;
+			span {
+				font-size: var(--mobileTit);
+			}
+		}
+		.topBox {
+			height: 300px;
+		}
+		h2 {
+			font-size: 2.9rem;
+		}
+
+		.msg {
+			.msgBox {
+				width: 90%;
+				margin: auto;
+
+				#mailSection {
+					margin: 20px auto;
+				}
+			}
+			.designBox {
+				display: none;
+			}
+		}
+		.tab {
+			height: 40vh;
 		}
 	}
 }

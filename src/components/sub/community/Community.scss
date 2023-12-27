@@ -1,12 +1,12 @@
 .Community {
 	h1 {
 		position: absolute;
-		padding: 10px 0px 0px 20px;
+		margin: 10px 0px 0px 20px;
 	}
 
 	.topBox {
 		width: 100%;
-		height: 550px;
+		height: 35vw;
 		margin: 5px 0 10px 0;
 		padding-bottom: 5px;
 
@@ -43,7 +43,7 @@
 		margin: 10px auto 200px;
 
 		.inputBox {
-			width: 30%;
+			width: 25%;
 			margin: 30px auto 20px auto;
 			display: flex;
 			justify-content: space-between;
@@ -96,7 +96,7 @@
 			--boxGap: 15px;
 			--num: 3;
 
-			width: 65%;
+			width: 70%;
 			padding-left: 50px;
 			border-left: 1px solid rgba(var(--baseColor-code), 0.5);
 			display: flex;
@@ -131,7 +131,8 @@
 
 					p {
 						font: 1rem/1.4 'arial';
-						height: 18vh;
+						margin-bottom: 40px;
+						padding-bottom: 10px;
 						opacity: 0.9;
 					}
 
@@ -175,6 +176,107 @@
 						&:nth-of-type(2) {
 							color: cornflowerblue;
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.laptop,
+.tablet,
+.mobile {
+	.Community {
+		h1 {
+			margin: -5px 0px 0px 20px;
+			span {
+				font-size: 5.5rem;
+			}
+		}
+	}
+}
+
+.tablet,
+.mobile {
+	.Community {
+		h1 {
+			margin: 20px 0 0 30px;
+			letter-spacing: -0.2rem;
+			span {
+				font-size: 3.15rem;
+			}
+		}
+		.subTit {
+			h3 {
+				font-size: 3.5rem;
+			}
+		}
+		.communityWrap {
+			.inputBox {
+				width: 100%;
+			}
+		}
+		.showBox {
+			--num: 2;
+			width: 90%;
+			border-left: none;
+
+			article {
+				height: 27vh;
+				margin-bottom: 30px;
+
+				.txt {
+					p {
+						height: 9vh;
+					}
+					textarea {
+						height: 9vh;
+					}
+				}
+			}
+		}
+	}
+}
+
+.mobile {
+	.Community {
+		h1 {
+			margin: 20px 0 0 20px;
+			letter-spacing: -0.2rem;
+			span {
+				font-size: 2.2rem;
+				letter-spacing: -0.1rem;
+			}
+		}
+
+		.subTit {
+			h3 {
+				font-size: 2.5rem;
+			}
+			p {
+				font-size: 1.25rem;
+			}
+		}
+		.communityWrap {
+			.inputBox {
+				width: 100%;
+			}
+		}
+		.showBox {
+			--num: 1;
+			width: 90%;
+			border-left: none;
+
+			article {
+				height: 27vh;
+				margin-bottom: 30px;
+
+				.txt {
+					p {
+						height: 9vh;
+					}
+					textarea {
+						height: 9vh;
 					}
 				}
 			}
