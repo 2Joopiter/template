@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
+import { useThrottle } from '../../../hooks/useThrottle';
 
 export default function Contact() {
 	const form = useRef();
@@ -11,8 +12,7 @@ export default function Contact() {
 
 		Array.from(elArr).forEach((el) => {
 			console.log(el);
-			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message')
-				el.value = '';
+			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message') el.value = '';
 		});
 	};
 
@@ -22,8 +22,7 @@ export default function Contact() {
 		const [user, email] = form.current.querySelectorAll('input');
 		const txtArea = form.current.querySelector('textarea');
 
-		if (!user.value || !email.value || !txtArea.value)
-			return alert('이름, 답장받을 이메일주소 문의내용을 모두 입력하세요.');
+		if (!user.value || !email.value || !txtArea.value) return alert('이름, 답장받을 이메일주소 문의내용을 모두 입력하세요.');
 
 		emailjs.sendForm('service_zzree4j', 'template_w86wuw7', form.current, '5euWzAafCXgbAmv3z').then(
 			(result) => {
@@ -75,30 +74,21 @@ export default function Contact() {
 
 	marker.current = new kakao.current.maps.Marker({
 		position: mapInfo.current[Index].latlng,
-		image: new kakao.current.maps.MarkerImage(
-			mapInfo.current[Index].imgSrc,
-			mapInfo.current[Index].imgSize,
-			mapInfo.current[Index].imgOpt
-		),
+		image: new kakao.current.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt),
 	});
 
 	const roadView = useRef(() => {
-		new kakao.current.maps.RoadviewClient().getNearestPanoId(
-			mapInfo.current[Index].latlng,
-			50,
-			(panoId) => {
-				new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
-					panoId,
-					mapInfo.current[Index].latlng
-				);
-			}
-		);
+		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, (panoId) => {
+			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
+		});
 	});
 
 	const setCenter = useCallback(() => {
 		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
 		roadView.current();
 	}, [Index]);
+
+	const throttledSetCenter = useThrottle(setCenter, 100);
 
 	useEffect(() => {
 		mapFrame.current.innerHTML = '';
@@ -111,21 +101,17 @@ export default function Contact() {
 		setView(false);
 
 		roadView.current();
-		mapInstance.current.addControl(
-			new kakao.current.maps.MapTypeControl(),
-			kakao.current.maps.ControlPosition.TOPRIGHT
-		);
+		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
 
-		mapInstance.current.addControl(
-			new kakao.current.maps.ZoomControl(),
-			kakao.current.maps.ControlPosition.RIGHT
-		);
+		mapInstance.current.addControl(new kakao.current.maps.ZoomControl(), kakao.current.maps.ControlPosition.RIGHT);
 
 		mapInstance.current.setZoomable(false);
+	}, [Index]);
 
-		window.addEventListener('resize', setCenter);
-		return () => window.removeEventListener('resize', setCenter);
-	}, [setCenter]);
+	useEffect(() => {
+		window.addEventListener('resize', throttledSetCenter);
+		return () => window.removeEventListener('resize', throttledSetCenter);
+	}, [throttledSetCenter]);
 
 	useEffect(() => {
 		Traffic
@@ -173,9 +159,7 @@ export default function Contact() {
 					</nav>
 
 					<nav className='info'>
-						<button onClick={() => setTraffic(!Traffic)}>
-							{Traffic ? '교통정보 OFF' : '교통정보 ON'}
-						</button>
+						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? '교통정보 OFF' : '교통정보 ON'}</button>
 						<button onClick={() => setView(!View)}>{View ? '지도' : '로드뷰'}</button>
 						<button onClick={setCenter}>위치 초기화</button>
 					</nav>
