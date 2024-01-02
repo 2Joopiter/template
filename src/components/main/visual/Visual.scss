@@ -2,4 +2,163 @@
 	width: 100%;
 	height: calc(100vh - 90px);
 	position: relative;
+	margin: 5px auto;
+
+	.swiper {
+		width: 100%;
+		height: 100%;
+
+		.swiper-wrapper {
+			.swiper-slide {
+				padding: 12vh 0px 10vh;
+
+				> .inner {
+					width: 70%;
+					height: 100%;
+					margin: 0 auto;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-content: center;
+					color: var(--baseColor);
+
+					.picBox {
+						width: 45%;
+						height: 70%;
+						position: relative;
+						display: flex;
+
+						> p {
+							width: 100%;
+							height: 100%;
+							overflow: hidden;
+							position: absolute;
+							top: 0;
+							left: 0;
+
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								transform: scale(1.5);
+							}
+
+							&:nth-of-type(1) {
+								top: 25px;
+								left: 25px;
+								filter: blur(25px) saturate(1.5);
+								opacity: 0.7;
+							}
+						}
+					}
+					.txtBox {
+						width: 53%;
+						height: 100%;
+						padding: 0px 85px;
+						/*
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						*/
+
+						h2 {
+							font-size: 3vmax;
+							font-weight: normal;
+							margin-bottom: 100px;
+							font-family: var(--boldFont);
+						}
+
+						a {
+							background-color: var(--baseColor);
+							color: var(--bgColor);
+							border: none;
+							display: inline-block;
+							padding: 10px 30px;
+							font-size: 0.8rem;
+							position: relative;
+							box-shadow: 10px 10px 20px rgba(var(--baseColor-code), 0.5);
+							transition-property: background-color, padding, box-shadow;
+							transition-duration: 0.5s;
+							transition-delay: 0.6s;
+
+							&::before,
+							&::after {
+								content: '';
+								position: absolute;
+								width: 10px;
+								height: 1px;
+								background: var(--bgColor);
+								transform-origin: right center;
+								right: 20px;
+								top: 50%;
+								opacity: 0;
+								transition-property: transform, opacity;
+								transition-duration: 0.8s;
+								transition-delay: 0.8s;
+							}
+							&::before {
+								transform: rotate(245deg);
+							}
+							&::after {
+								transform: rotate(-245deg);
+							}
+
+							&:hover {
+								background-color: var(--pointColor);
+								color: #fff;
+								padding: 10px 30px;
+								padding-right: 80px;
+								padding-left: 20px;
+								box-shadow: 10px 10px 20px rgba(var(--pointColor-code), 0.5);
+								transition-delay: 0s;
+
+								&::before {
+									transform: rotate(35deg);
+									opacity: 1;
+									transition-delay: 0.3s;
+								}
+								&::after {
+									transform: rotate(-35deg);
+									opacity: 1;
+									transition-delay: 0.3s;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.swiper-pagination {
+			width: 70%;
+			left: 15%;
+			bottom: 10%;
+
+			span {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				margin: 0px 5px;
+				border-radius: 5px;
+				background-color: var(--baseColor);
+				color: var(--bgColor);
+				text-indent: -9999px;
+				cursor: pointer;
+				transition-property: width, background-color;
+				transition-duration: 0.5s;
+				background-color: var(--pointColor);
+			}
+
+			span.swiper-pagination-bullet-active {
+				width: 60px;
+			}
+		}
+
+		.swiperController {
+			position: absolute;
+			bottom: 50px;
+			right: 100px;
+			z-index: 4;
+		}
+	}
 }

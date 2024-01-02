@@ -8,6 +8,7 @@ import Members from './components/sub/members/Members';
 import Youtube from './components/sub/youtube/Youtube';
 import Footer from './components/common/footer/Footer';
 import Detail from './components/sub/youtube/Detail';
+import CookieModal from './components/common/cookieModal/CookieModal';
 import * as types from './redux/action';
 
 import { Route } from 'react-router-dom';
@@ -77,6 +78,9 @@ export default function App() {
 			<Route path='/Detail/:id' component={Detail} />
 			<Footer />
 			<Menu />
+			<CookieModal wid={300} ht={200}>
+				<h1>OPEN EVENT</h1>
+			</CookieModal>
 		</div>
 	);
 }

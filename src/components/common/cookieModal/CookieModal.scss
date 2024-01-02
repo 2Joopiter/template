@@ -1,0 +1,33 @@
+.CookieModal {
+	background-color: var(--pointColor);
+	color: var(--lightColor);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 5;
+
+	h1 {
+		font-size: 2rem;
+		padding: 15px 15px;
+	}
+
+	.controls {
+		nav {
+			position: relative;
+			top: 80px;
+			padding: 0px 20px;
+
+			span {
+				padding: 0px 0px 0px 7px;
+			}
+		}
+
+		.close {
+			position: relative;
+			top: 75px;
+			left: 75%;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+	}
+}
