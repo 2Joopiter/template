@@ -1,10 +1,11 @@
 import './Visual.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Pagination, Autoplay } from 'swiper';
+import { Pagination, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { useEffect, useRef } from 'react';
 import { useCustomText } from '../../../hooks/useText';
@@ -17,13 +18,14 @@ export default function Visual() {
 	return (
 		<figure className='Visual'>
 			<Swiper
-				modules={[Pagination, Autoplay]}
+				modules={[Pagination, Autoplay, Navigation]}
 				pagination={{
 					clickable: true,
 					renderBullet: (index, className) => {
 						return `<span class=${className}>${index + 1}</span>`;
 					},
 				}}
+				navigation
 				autoplay={{
 					delay: 5000,
 					disableOnInteraction: true,

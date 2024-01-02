@@ -132,7 +132,7 @@
 		.swiper-pagination {
 			width: 70%;
 			left: 15%;
-			bottom: 10%;
+			bottom: 20%;
 
 			span {
 				display: inline-block;
@@ -152,6 +152,12 @@
 			span.swiper-pagination-bullet-active {
 				width: 60px;
 			}
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			opacity: 0.8;
+			color: var(--pointColor) !important;
 		}
 
 		.swiperController {
