@@ -22,10 +22,12 @@ export default function Department() {
 					{InfoData?.map((Info, idx) => {
 						return (
 							<article key={Info + idx}>
-								<div className='infoPic'>
-									<img src={`${path.current}/img/${Info.pic}`} alt='{Info.title}' />
+								<div className='infoContent'>
+									<h4>{Info.title}</h4>
+									<div className='infoPic'>
+										<img src={`${path.current}/img/${Info.pic}`} alt='{Info.title}' />
+									</div>
 								</div>
-								<h4>{Info.title}</h4>
 								<p>{Info.text}</p>
 							</article>
 						);
