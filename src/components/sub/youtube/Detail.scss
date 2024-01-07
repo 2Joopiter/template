@@ -1,6 +1,12 @@
 .Detail {
+	border: 2px solid rgba(var(--baseColor-code), 0.5);
+	border-top: 1px solid rgba(var(--baseColor-code), 0.5);
+	border-bottom: none;
+	padding-bottom: 100px;
+
 	h1 {
 		letter-spacing: -0.3rem;
+		padding-left: 20px;
 	}
 	h2 {
 		margin: 50px 0 20px 0;
@@ -9,8 +15,9 @@
 		font-size: 2.5rem;
 	}
 	.videoBox {
-		width: 100%;
+		width: 99%;
 		height: 70vh;
+		margin: 0 auto;
 
 		iframe {
 			width: 100%;

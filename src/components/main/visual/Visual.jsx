@@ -49,8 +49,8 @@ export default function Visual() {
 									<h2>{shortenText(vid.snippet.title, 50)}</h2>
 									<Link
 										to={`/detail/${vid.id}`}
-										onMouseEnter={swiperRef.current.autoplay.stop}
-										onMouseLeave={swiperRef.current.autoplay.start}
+										onMouseEnter={swiperRef.current?.autoplay.stop}
+										onMouseLeave={swiperRef.current?.autoplay.start}
 									>
 										<span></span>View Detail
 									</Link>

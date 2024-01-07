@@ -78,8 +78,12 @@ export default function App() {
 			<Route path='/Detail/:id' component={Detail} />
 			<Footer />
 			<Menu />
-			<CookieModal wid={300} ht={200}>
-				<h1>OPEN EVENT</h1>
+			<CookieModal wid={400} ht={300}>
+				<h1>Notice</h1>
+				<h2>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius sed aut ab ea
+					maiores cupiditate excepturi quae a saepe.
+				</h2>
 			</CookieModal>
 		</div>
 	);

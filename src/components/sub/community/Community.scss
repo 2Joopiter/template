@@ -40,7 +40,7 @@
 				color: rgba(var(--baseColor-code), 0.9);
 			}
 			p {
-				text-align: left;
+				text-align: center;
 				margin-left: 25px;
 				font-family: var(--boldFont);
 				font-weight: 500;
@@ -76,7 +76,7 @@
 						border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
 						padding: 5px 10px;
 						font-weight: normal;
-						color: var(--baseColor);
+						color: var(--Color);
 						margin-bottom: 5px;
 						background-color: transparent;
 						resize: none;
@@ -85,7 +85,7 @@
 							font-size: 1rem;
 							font-weight: 200;
 							letter-spacing: 0.15rem;
-							color: var(--baseColor);
+							color: var(--pointColor);
 							font-family: var(--pointFont);
 							font-weight: bold;
 						}

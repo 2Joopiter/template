@@ -8,14 +8,19 @@
 
 	h1 {
 		font-size: 2rem;
-		padding: 15px 15px;
+		padding: 15px 20px;
+	}
+
+	h2 {
+		font-size: 1rem;
+		padding: 15px 25px;
 	}
 
 	.controls {
 		nav {
 			position: relative;
-			top: 80px;
-			padding: 0px 20px;
+			top: 90px;
+			padding: 10px 20px;
 
 			span {
 				padding: 0px 0px 0px 7px;
@@ -24,7 +29,7 @@
 
 		.close {
 			position: relative;
-			top: 75px;
+			top: 60px;
 			left: 75%;
 			padding: 10px 20px;
 			cursor: pointer;
