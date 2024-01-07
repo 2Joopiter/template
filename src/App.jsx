@@ -46,7 +46,7 @@ export default function App() {
 	const fetchYoutube = useCallback(async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
 		const pid = process.env.REACT_APP_YOUTUBE_LIST;
-		const num = 10;
+		const num = 11;
 		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
 		try {

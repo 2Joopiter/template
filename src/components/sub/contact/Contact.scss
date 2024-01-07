@@ -1,7 +1,12 @@
 .Contact {
+	border: 2px solid rgba(var(--baseColor-code), 0.5);
+	border-top: 1px solid rgba(var(--baseColor-code), 0.5);
+	border-bottom: none;
+	padding-bottom: 10px;
+
 	h1 {
 		position: absolute;
-		margin: 180px 0 0 30px;
+		margin: 145px 0 0 30px;
 
 		span {
 			color: rgba(var(--lightColor-code), 0.9);
@@ -9,10 +14,11 @@
 	}
 
 	.topBox {
-		width: 100%;
-		height: 550px;
-		margin: 5px 0 10px 0;
-		padding-bottom: 5px;
+		width: 99%;
+		height: 450px;
+		margin: 0 auto 10px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid rgba(var(--baseColor-code), 0.5);
 
 		img {
 			width: 100%;
@@ -20,30 +26,52 @@
 			object-fit: cover;
 		}
 	}
-	h2 {
-		display: flex;
-		justify-content: center;
-		margin: 50px auto 50px;
-		font-family: var(--boldFont);
-		font-size: var(--titSize2);
-		color: rgba(var(--baseColor-code), 0.9);
-	}
 
 	.msg {
-		width: 90%;
+		width: 99%;
 		display: flex;
 		justify-content: space-between;
 		margin: 10px auto;
-		//border: 1px solid rgba(var(--baseColor-code), 0.3);
+		border-bottom: 2px solid rgba(var(--baseColor-code), 0.5);
+
+		h2 {
+			padding-top: 20px;
+			padding-bottom: 30px;
+			margin-bottom: 10px;
+			padding-left: 30px;
+			font-family: var(--boldFont);
+			font-size: var(--titSize2);
+			color: rgba(var(--baseColor-code), 0.9);
+			border-right: 2px solid rgba(var(--baseColor-code), 0.5);
+			writing-mode: vertical-rl;
+		}
 
 		.msgBox {
-			width: 55%;
-			margin: 5px auto;
+			width: 100%;
+			margin: 5px auto 50px;
+
+			h4 {
+				margin: 10px;
+				padding-bottom: 10px;
+				text-align: center;
+				font-size: 4rem;
+				font-family: var(--pointFont);
+				font-weight: 200;
+				border-bottom: 1px solid rgba(var(--baseColor-code), 0.3);
+				color: var(--pointColor);
+			}
+
+			h5 {
+				text-align: center;
+				font-size: 1.2rem;
+				padding-bottom: 30px;
+			}
 
 			#mailSection {
-				width: 85%;
-				margin: 25px 0px 5px 30px;
-				font-family: var(--titleFont);
+				width: 70%;
+				margin: 25px auto 5px;
+				font-family: var(--pointFont);
+				font-weight: bold;
 
 				form {
 					display: flex;
@@ -57,12 +85,22 @@
 					.sendBtn {
 						padding-top: 5px;
 						text-align: right;
+
+						input {
+							border: none;
+							background-color: var(--pointColor);
+							padding: 10px 20px;
+							color: var(--lightColor);
+							font-family: var(--sansFont);
+							font-size: 1.3rem;
+						}
 					}
 				}
 			}
 		}
 
 		.designBox {
+			display: none;
 			width: 45%;
 			margin: 5px auto;
 			overflow: hidden;
@@ -76,28 +114,49 @@
 		}
 	}
 
+	.subTit {
+		h2 {
+			padding-bottom: 30px;
+			padding-right: 30px;
+			text-align: right;
+			font-family: var(--boldFont);
+			font-size: var(--titSize2);
+			color: rgba(var(--baseColor-code), 0.9);
+			border-bottom: 2px solid rgba(var(--baseColor-code), 0.5);
+		}
+	}
+
 	#mapSection {
 		.controlBox {
 			.branch {
-				margin: 40px auto 0 50px;
+				text-align: center;
+
 				button {
+					display: inline-block;
+					width: 16.65%;
 					background-color: transparent;
-					background-color: var(--pointColor);
-					color: var(--bgColor);
-					padding: 3px 7px;
-					border: 1px solid rgba(var(--baseColor-code), 0.3);
-					font-family: var(--baseFont);
-				}
-			}
-			.info {
-				margin: 0 auto 20px 50px;
-				button {
-					background-color: transparent;
-					background-color: var(--pointColor);
-					color: var(--bgColor);
-					padding: 3px 7px;
-					border: 1px solid rgba(var(--baseColor-code), 0.3);
-					font-family: var(--baseFont);
+					padding: 30px 0px;
+					border: 2px solid rgba(var(--baseColor-code), 0.5);
+					font-family: var(--boldFont);
+					font-size: 2rem;
+					font-weight: bold;
+					border-top: none;
+					cursor: pointer;
+
+					&:nth-of-type(1) {
+						border-left: none;
+					}
+
+					&:nth-of-type(n + 1) {
+						border-right: none;
+					}
+
+					&:nth-of-type(n + 4) {
+						border-right: none;
+						background-color: var(--baseColor);
+						color: var(--lightColor);
+						border-color: rgba(var(--lightColor-code), 0.5);
+					}
 				}
 			}
 		}
@@ -110,7 +169,7 @@
 		filter: saturate(0);
 		transition: filter 0.5s;
 		margin-bottom: 200px;
-		margin: 20px auto 200px 50px;
+		margin: 50px auto 200px;
 
 		&:hover {
 			filter: saturate(1);

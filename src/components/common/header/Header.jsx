@@ -1,7 +1,7 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
-import { SlMenu } from 'react-icons/sl';
 import { useDispatch, useSelector } from 'react-redux';
+import { SlMenu } from 'react-icons/sl';
 import * as types from '../../../redux/action';
 
 export default function Header() {

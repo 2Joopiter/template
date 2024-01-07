@@ -17,19 +17,23 @@ export default function Youtube() {
 			<div class='topVid'>
 				<video src={`${path.current}/vid/youtube.mp4`} alt='yacht' muted autoPlay loop />
 			</div>
-			<div className='mainVid'>
-				<iframe
-					width='560'
-					height='315'
-					src='https://www.youtube.com/embed/b7LSsKsJGHY?si=J42JSmXDkdNY1kEd&amp;controls=0'
-					title='YouTube video player'
-					frameborder='0'
-					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-					allowfullscreen
-				></iframe>
-			</div>
+			<section className='latestVid'>
+				<div className='mainVid'>
+					<iframe
+						width='560'
+						height='315'
+						src='https://www.youtube.com/embed/b7LSsKsJGHY?si=J42JSmXDkdNY1kEd&amp;controls=0'
+						title='YouTube video player'
+						frameborder='0'
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+						allowfullscreen
+					></iframe>
+				</div>
+				<p>Latest Video</p>
+			</section>
+
 			<div className='content'>
-				<h3>Video</h3>
+				<h3></h3>
 				{YoutubeData?.map((data) => {
 					const [date, time] = data.snippet.publishedAt.split('T');
 
@@ -37,13 +41,12 @@ export default function Youtube() {
 						<article key={data.id}>
 							<div className='videoBox'>
 								<div className='thumbnail'>
-									{' '}
 									<Link to={`/detail/${data.id}`}>
 										<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
 									</Link>
 								</div>
 								<div className='txt'>
-									<h2>{shortenText(data.snippet.title, 50)}</h2>
+									<h2>{shortenText(data.snippet.title, 27)}</h2>
 									<p>{shortenText(data.snippet.description, 300)}</p>
 									<div className='infoBox'>
 										<span>{customText(date, '.')}</span>

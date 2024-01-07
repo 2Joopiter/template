@@ -12,7 +12,8 @@ export default function Contact() {
 
 		Array.from(elArr).forEach((el) => {
 			console.log(el);
-			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message') el.value = '';
+			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message')
+				el.value = '';
 		});
 	};
 
@@ -22,7 +23,8 @@ export default function Contact() {
 		const [user, email] = form.current.querySelectorAll('input');
 		const txtArea = form.current.querySelector('textarea');
 
-		if (!user.value || !email.value || !txtArea.value) return alert('이름, 답장받을 이메일주소 문의내용을 모두 입력하세요.');
+		if (!user.value || !email.value || !txtArea.value)
+			return alert('이름, 답장받을 이메일주소 문의내용을 모두 입력하세요.');
 
 		emailjs.sendForm('service_zzree4j', 'template_w86wuw7', form.current, '5euWzAafCXgbAmv3z').then(
 			(result) => {
@@ -50,21 +52,21 @@ export default function Contact() {
 
 	const mapInfo = useRef([
 		{
-			title: '여의도 IFC몰',
+			title: 'IFC mall',
 			latlng: new kakao.current.maps.LatLng(37.52506188634506, 126.9259552665427),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) },
 		},
 		{
-			title: '삼성역 코엑스',
+			title: 'COEX',
 			latlng: new kakao.current.maps.LatLng(37.51100661425726, 127.06162026853143),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) },
 		},
 		{
-			title: '서울 시청',
+			title: 'Seoul City hall',
 			latlng: new kakao.current.maps.LatLng(37.5662952, 126.9779451),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
@@ -74,24 +76,35 @@ export default function Contact() {
 
 	marker.current = new kakao.current.maps.Marker({
 		position: mapInfo.current[Index].latlng,
-		image: new kakao.current.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt),
+		image: new kakao.current.maps.MarkerImage(
+			mapInfo.current[Index].imgSrc,
+			mapInfo.current[Index].imgSize,
+			mapInfo.current[Index].imgOpt
+		),
 	});
 
-	const roadView = useRef(() => {
-		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, (panoId) => {
-			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
-		});
-	});
+	const roadView = useCallback(() => {
+		new kakao.current.maps.RoadviewClient().getNearestPanoId(
+			mapInfo.current[Index].latlng,
+			200,
+			(panoId) => {
+				new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
+					panoId,
+					mapInfo.current[Index].latlng
+				);
+			}
+		);
+	}, [Index]);
 
 	const setCenter = useCallback(() => {
 		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
-		roadView.current();
 	}, [Index]);
 
 	const throttledSetCenter = useThrottle(setCenter, 100);
 
 	useEffect(() => {
 		mapFrame.current.innerHTML = '';
+		viewFrame.current.innerHTML = '';
 		mapInstance.current = new kakao.current.maps.Map(mapFrame.current, {
 			center: mapInfo.current[Index].latlng,
 			level: 3,
@@ -100,11 +113,14 @@ export default function Contact() {
 		setTraffic(false);
 		setView(false);
 
-		roadView.current();
-		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
-
-		mapInstance.current.addControl(new kakao.current.maps.ZoomControl(), kakao.current.maps.ControlPosition.RIGHT);
-
+		mapInstance.current.addControl(
+			new kakao.current.maps.MapTypeControl(),
+			kakao.current.maps.ControlPosition.TOPRIGHT
+		);
+		mapInstance.current.addControl(
+			new kakao.current.maps.ZoomControl(),
+			kakao.current.maps.ControlPosition.RIGHT
+		);
 		mapInstance.current.setZoomable(false);
 	}, [Index]);
 
@@ -119,14 +135,21 @@ export default function Contact() {
 			: mapInstance.current.removeOverlayMapTypeId(kakao.current.maps.MapTypeId.TRAFFIC);
 	}, [Traffic]);
 
+	useEffect(() => {
+		View && viewFrame.current.children.length === 0 && roadView();
+	}, [View, roadView]);
+
 	return (
 		<Layout title={'Contact'}>
 			<figure className='topBox'>
 				<img src={`${path.current}/img/contactTop.jpg`} alt='map' />
 			</figure>
-			<h2>Message</h2>
+
 			<article className='msg'>
+				<h2>Contact Us</h2>
 				<div className='msgBox'>
+					<h4>How can we help?</h4>
+					<h5>Our team of experts is on hand to answer your questions</h5>
 					<div id='mailSection'>
 						<form ref={form} onSubmit={sendEmail}>
 							<label>Name</label>
@@ -146,7 +169,9 @@ export default function Contact() {
 				</div>
 			</article>
 
-			<h2>Location</h2>
+			<div className='subTit'>
+				<h2>Location</h2>
+			</div>
 
 			<div id='mapSection'>
 				<div className='controlBox'>
@@ -156,12 +181,11 @@ export default function Contact() {
 								{el.title}
 							</button>
 						))}
-					</nav>
-
-					<nav className='info'>
-						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? '교통정보 OFF' : '교통정보 ON'}</button>
-						<button onClick={() => setView(!View)}>{View ? '지도' : '로드뷰'}</button>
-						<button onClick={setCenter}>위치 초기화</button>
+						<button onClick={() => setTraffic(!Traffic)}>
+							{Traffic ? 'Traffic OFF' : 'Traffic ON'}
+						</button>
+						<button onClick={() => setView(!View)}>{View ? 'map' : 'Road View'}</button>
+						<button onClick={setCenter}>Reset</button>
 					</nav>
 				</div>
 				<section className='tab'>

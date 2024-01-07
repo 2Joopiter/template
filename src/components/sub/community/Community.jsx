@@ -97,70 +97,75 @@ export default function Community() {
 			<figure className='topBox'>
 				<img src={`${path.current}/img/community.jpg`} alt='hiking' />
 			</figure>
-			<div className='subTit'>
-				<h3>Recruit</h3>
-				<p>Meet travel mates from all over the world</p>
-			</div>
-			<div className='communityWrap'>
-				<div className='inputBox'>
-					<div className='writeBox'>
-						<input type='text' placeholder='title' ref={refTit} />
-						<textarea cols='30' rows='3' placeholder='content' ref={refCon}></textarea>
-						<nav>
-							<button onClick={createPost}>
-								<IoMdCreate />
-							</button>
-							<button onClick={resetPost}>
-								<MdClose />
-							</button>
-						</nav>
+			<section className='inputBox'>
+				<div className='subTit'>
+					<h3>Recruit</h3>
+					<p>Meet travel mates from all over the world</p>
+				</div>
+				<div className='communityWrap'>
+					<div className='inputBox'>
+						<div className='writeBox'>
+							<input type='text' placeholder='title' ref={refTit} />
+							<textarea cols='30' rows='3' placeholder='content' ref={refCon}></textarea>
+							<nav>
+								<button onClick={createPost}>
+									<IoMdCreate />
+								</button>
+								<button onClick={resetPost}>
+									<MdClose />
+								</button>
+							</nav>
+						</div>
 					</div>
 				</div>
+			</section>
+			<div className='subTit'>
+				<em>Message</em>
+			</div>
 
-				<div className='showBox'>
-					{Post.map((el, idx) => {
-						const date = JSON.stringify(el.date);
-						const strDate = changeText(date.split('T')[0].slice(1), '.');
+			<div className='showBox'>
+				{Post.map((el, idx) => {
+					const date = JSON.stringify(el.date);
+					const strDate = changeText(date.split('T')[0].slice(1), '.');
 
-						if (el.enableUpdate) {
-							//수정모드
-							return (
-								<article key={el + idx}>
-									<div className='txt'>
-										<input type='text' defaultValue={el.title} ref={refEditTit} />
-										<textarea
-											cols='30'
-											rows='4'
-											defaultValue={el.content}
-											ref={refEditCon}
-										></textarea>
-										<span>Date: {strDate}</span>
-									</div>
-									<nav>
-										{/* 수정모드 일때 해당 버튼 클릭시 다시 출력모드 변경 */}
-										<button onClick={() => disableUpdate(idx)}>Cancel</button>
-										<button onClick={() => updatePost(idx)}>Update</button>
-									</nav>
-								</article>
-							);
-						} else {
-							//출력모드
-							return (
-								<article key={el + idx}>
-									<div className='txt'>
-										<h2>{el.title}</h2>
-										<p>{el.content}</p>
-										<span>Date: {strDate}</span>
-									</div>
-									<nav>
-										<button onClick={() => enableUpdate(idx)}>Edit</button>
-										<button onClick={() => deletePost(idx)}>Delete</button>
-									</nav>
-								</article>
-							);
-						}
-					})}
-				</div>
+					if (el.enableUpdate) {
+						//수정모드
+						return (
+							<article key={el + idx}>
+								<div className='txt'>
+									<input type='text' defaultValue={el.title} ref={refEditTit} />
+									<textarea
+										cols='30'
+										rows='4'
+										defaultValue={el.content}
+										ref={refEditCon}
+									></textarea>
+									<span>Date: {strDate}</span>
+								</div>
+								<nav>
+									{/* 수정모드 일때 해당 버튼 클릭시 다시 출력모드 변경 */}
+									<button onClick={() => disableUpdate(idx)}>Cancel</button>
+									<button onClick={() => updatePost(idx)}>Update</button>
+								</nav>
+							</article>
+						);
+					} else {
+						//출력모드
+						return (
+							<article key={el + idx}>
+								<div className='txt'>
+									<h2>{el.title}</h2>
+									<p>{el.content}</p>
+									<span>Date: {strDate}</span>
+								</div>
+								<nav>
+									<button onClick={() => enableUpdate(idx)}>Edit</button>
+									<button onClick={() => deletePost(idx)}>Delete</button>
+								</nav>
+							</article>
+						);
+					}
+				})}
 			</div>
 		</Layout>
 	);
